@@ -60,7 +60,7 @@ export default function Projects() {
                                         </a>
                                     </Button>
                                 ))}
-                                {p.web && (
+                                {p.web.href && (
                                     <Button variant="outline" size="sm" asChild>
                                         <a href={p.web.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1">
                                             웹사이트 <ExternalLink className="h-3.5 w-3.5" />

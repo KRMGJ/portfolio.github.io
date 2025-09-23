@@ -146,7 +146,7 @@ export const projects = [
             "컴포넌트 구조화, 상태/라우팅 설계",
         ],
         outcomes: ["카드/모달 조합으로 탐색 경험 개선", "사용자 흐름에 맞춘 UX 설계 경험 축적"],
-        web: { href: "https://where-to-go-eta.vercel.app/" },
+        web: { href: null },
     },
     {
         name: "1차 팀 프로젝트 — Store_24",
@@ -158,7 +158,7 @@ export const projects = [
         role: "Full-stack",
         contributions: ["장바구니/결제 흐름 UI 설계", "관리자 테이블/필터 화면 제작"],
         outcomes: ["상품/장바구니/결제 흐름에 맞춘 UX 설계 경험 축적"],
-        web: { href: "https://www.store24.co.kr/" },
+        web: { href: null },
     },
     {
         name: "1차 개인 프로젝트 — 개인 블로그 웹앱",
