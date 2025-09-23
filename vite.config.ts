@@ -11,8 +11,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-    optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query'],
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
     esbuildOptions: { target: 'es2020' },
   },
 })
