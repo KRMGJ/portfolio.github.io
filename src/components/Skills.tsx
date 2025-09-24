@@ -19,12 +19,12 @@ export default function Skills() {
                 <div>
                     <h3 className="font-semibold mb-3 flex items-center gap-2"><Wrench className="h-4 w-4" /> Tools</h3>
                     <div className="flex flex-wrap gap-2 mb-6">{skills.tools.map((s) => <Chip key={s}>{s}</Chip>)}</div>
-                    <h3 className="font-semibold mb-3">Soft Skills</h3>
+                    {/* <h3 className="font-semibold mb-3">Soft Skills</h3>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-muted-foreground">
                         {skills.soft.map((s) => (
                             <li key={s} className="inline-flex items-center gap-2"><CheckCircle2 className="h-4 w-4" />{s}</li>
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </Section>

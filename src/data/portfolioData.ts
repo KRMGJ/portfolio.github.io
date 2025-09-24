@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Cpu, Database, Wrench, Rocket, Users, Briefcase, Lightbulb, Mail, Phone, MapPin, Github, Globe } from "lucide-react";
+import { GraduationCap, Award, Users, Briefcase, Lightbulb, Mail, Phone, MapPin, Github, Globe } from "lucide-react";
 
 export const profile = {
     name: "장민규",
@@ -20,7 +20,7 @@ export const profile = {
 } as const;
 
 export const education = [
-    { school: "배재대학교", major: "전자공학과", period: "2019.03 ~", icon: GraduationCap },
+    { school: "배재대학교", major: "전자공학과", period: "2019.03 ~ 2024.02", icon: GraduationCap },
 ] as const;
 
 export const certificates = [
@@ -43,9 +43,6 @@ export const skills = {
         "Bootstrap",
         "Tailwind CSS",
         "shadcn/ui",
-        "웹 성능 최적화",
-        "Lazy Loading / Code Splitting",
-        "접근성/반응형",
     ],
     be: [
         "Java",
@@ -87,15 +84,15 @@ export const skills = {
         "DBeaver",
         "SQL Developer",
     ],
-    soft: [
-        "문제 해결",
-        "분석적 사고",
-        "창의적 문제 해결",
-        "기술적 의사소통",
-        "피드백 수용/제공",
-        "협업 / 역할 유연성",
-        "적응력 / 변화수용",
-    ],
+    // soft: [
+    //     "문제 해결",
+    //     "분석적 사고",
+    //     "창의적 문제 해결",
+    //     "기술적 의사소통",
+    //     "피드백 수용/제공",
+    //     "협업 / 역할 유연성",
+    //     "적응력 / 변화수용",
+    // ],
 } as const;
 
 export type ProjectLink = { label: string; href: string };
@@ -106,7 +103,7 @@ export const projects = [
         tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "Spring Boot", "PostgreSQL", "Docker", "Redis", "OpenAI"],
         summary: "설문 생성/배포, 응답 관리, 결과 시각화",
         links: [
-            { label: "문서", href: "https://garrulous-erica-128.notion.site/2-Form-277c10a0c0d28076b251ef181043722e?pvs=73" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/form" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
         contributions: [
@@ -170,7 +167,7 @@ export const projects = [
         tags: ["React", "Bootstrap", "Vercel", "TypeScript"],
         summary: "폼 검증, 모듈 컴포넌트, 라우팅",
         links: [
-            { label: "문서", href: "https://www.notion.so/1-8949d279e46643acb2568a2dcd556a1c?pvs=21" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/blog" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
         contributions: [
@@ -202,10 +199,9 @@ export const experiences = [
 ] as const;
 
 export const howIWork = [
-    "목표 달성도 중요하지만 과정에서 재미와 의미를 찾습니다.",
-    "회사와 사용자 모두에게 긍정적 임팩트를 만드는 일을 선호합니다.",
-    "문제가 생기면 상황 안에서 앞으로 나아갈 대안을 즉시 모색합니다.",
-    "함께 정한 기한을 지키려고 노력합니다.",
+    "목표 달성을 최우선으로 생각하며, 문제 해결을 위한 다양한 접근 방식을 모색합니다.",
+    "팀워크를 중시하며, 열린 소통과 협력을 통해 시너지를 창출합니다.",
+    "함께 정한 기한을 지키고, 책임감을 가지고 맡은 바를 완수합니다.",
     "Git Flow 기반 협업과 코드리뷰에 익숙하며, PR 설명/테스트 로그/이슈 링크로 문서화를 습관화합니다.",
 ] as const;
 

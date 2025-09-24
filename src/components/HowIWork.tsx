@@ -5,7 +5,7 @@ import { howIWork } from "@/data/portfolioData";
 
 export default function HowIWork() {
     return (
-        <Section title="일하는 방식">
+        <Section title="업무 원칙">
             <div className="grid gap-3">
                 {howIWork.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm">

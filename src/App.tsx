@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "./page/Main";
-import Form from "./docs/Form";
+import { FormPage } from "./docs/FormPage";
+import { BlogPage } from "./docs/BlogPage";
 
 
 export default function App() {
@@ -8,7 +9,8 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/form" element={<FormPage />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </div>
   );
