@@ -123,7 +123,7 @@ export const projects = [
         tags: ["React", "TypeScript", "Vite", "Express", "REST", "MySQL", "Team"],
         summary: "여행 검색, 필터, 위시리스트, 지도 연동",
         links: [
-            { label: "문서", href: "https://www.notion.so/2-Where-To-Go-560d7a75bb9b4731950adb53f126afc6?pvs=21" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/wtg" },
         ] as ProjectLink[],
         role: "Full-stack",
         contributions: [
