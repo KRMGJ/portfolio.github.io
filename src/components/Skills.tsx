@@ -1,4 +1,3 @@
-import React from "react";
 import Section from "./Section";
 import Chip from "./Chip";
 import { Cpu, Database, Wrench, CheckCircle2 } from "lucide-react";

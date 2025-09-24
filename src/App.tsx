@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "@/components/Hero";
 import Education from "@/components/Education";
 import Certificates from "@/components/Certificates";

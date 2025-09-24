@@ -1,4 +1,3 @@
-import React from "react";
 import Section from "./Section";
 import { Card, CardContent } from "@/components/ui/card";
 import { experiences } from "@/data/portfolioData";
