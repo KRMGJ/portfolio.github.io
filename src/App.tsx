@@ -3,6 +3,7 @@ import Main from "./page/Main";
 import { FormPage } from "./docs/FormPage";
 import { BlogPage } from "./docs/BlogPage";
 import { StorePage } from "./docs/StorePage";
+import { WhereToGoPage } from "./docs/WtgPage";
 
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/form" element={<FormPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/store" element={<StorePage />} />
+        <Route path="/wtg" element={<WhereToGoPage />} />
       </Routes>
     </div>
   );

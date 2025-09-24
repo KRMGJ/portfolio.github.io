@@ -91,3 +91,39 @@ export const storeCaseStudyData: CaseStudyData = {
         { label: "GitHub Back", href: "https://github.com/KRMGJ/store24H-back" },
     ],
 };
+
+export const whereToGoCaseStudyData: CaseStudyData = {
+    title: "2차 팀 프로젝트 — Where To Go",
+    subtitle: "여행/로컬 정보 탐색 · 소모임 플랫폼",
+    summary:
+        "축제 정보와 소모임을 연결하는 커뮤니티 플랫폼. 축제/모임 등록·검색·리뷰·채팅 기능과 관리자 공지/회원 관리까지 포함.",
+    role: "Full-stack (팀, 담당: 회원가입/로그인, 마이페이지, 고객센터, 공지사항, 길찾기 제외 전체)",
+    period: "2024-07-01 ~ 2024-08-09",
+    members: "4명",
+    tags: ["React", "TypeScript", "Spring Boot", "MySQL", "REST API", "Gradle", "HTML/CSS/JavaScript", "Kakao Map API", "한국관광공사 API"],
+    features: [
+        { title: "회원", items: ["회원가입, 메일 인증, 로그인/로그아웃", "비밀번호/아이디 찾기", "마이페이지(정보 수정)", "온도 기능"], },
+        { title: "관리자", items: ["1:1 문의 응답", "공지사항 작성", "회원/모임/게시글 관리", "축제 정보 수정"], },
+        { title: "모임", items: ["모임 개설, 수정, 삭제", "가입 신청 수락/거절", "모임 개설자와 1:1 채팅"], },
+        { title: "게시판", items: ["게시물 등록/수정/삭제", "사진첩"], },
+        { title: "검색/필터", items: ["모임 카테고리/지역 필터링", "태그 검색", "축제 지역 필터링"], },
+        { title: "축제", items: ["별점 리뷰", "찜(좋아요)", "별점 Top5", "카카오맵 길찾기"], },
+    ],
+    outcomes: [
+        "UI/UX 디자인 중심으로 사용자 경험을 더 깊이 이해",
+    ],
+    screenshots: [
+        { src: "/images/wtg/home.png", caption: "메인 대시보드" },
+        { src: "/images/wtg/festival-list.png", caption: "축제 목록" },
+        { src: "/images/wtg/festival-detail.png", caption: "축제 상세" },
+        { src: "/images/wtg/group-detail.png", caption: "모임 상세" },
+        { src: "/images/wtg/gallery.png", caption: "사진첩" },
+        { src: "/images/wtg/chat.png", caption: "채팅방" },
+        { src: "/images/wtg/alert.png", caption: "채팅 알림" },
+        { src: "/images/wtg/admin.png", caption: "회원 관리 (관리자)" },
+    ],
+    links: [
+        { label: "GitHub Front", href: "https://github.com/KRMGJ/WhereToGo_F" },
+        { label: "GitHub Back", href: "https://github.com/KRMGJ/WhereToGo_B" },
+    ],
+};
