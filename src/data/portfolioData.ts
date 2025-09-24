@@ -1,12 +1,5 @@
 import { GraduationCap, Award, Cpu, Database, Wrench, Rocket, Users, Briefcase, Lightbulb, Mail, Phone, MapPin, Github, Globe } from "lucide-react";
 
-/**
- * NOTE
- * - 기존 스키마를 최대한 유지하면서(호환성 유지) 필드를 확장했습니다.
- * - 새로 추가된 필드는 모두 optional 로 설계하여 기존 컴포넌트가 깨지지 않도록 했습니다.
- * - TODO 표시는 실제 값으로 교체 필요합니다(특히 GitHub URL).
- */
-
 export const profile = {
     name: "장민규",
     title: "웹 개발자",
@@ -16,7 +9,7 @@ export const profile = {
     phone: "+82 10-9305-6649",
     links: [
         { label: "Notion", href: "https://www.notion.so/c197098381a141ff8db30429fa5dc17b?pvs=25#3c7aef3ec6da48128c09d07787a732e4", icon: Globe },
-        { label: "Github", href: "https://github.com/your-id", icon: Github }, // TODO: 실제 GitHub 계정 URL로 교체
+        { label: "Github", href: "https://github.com/KRMGJ", icon: Github },
     ],
     icons: { Mail, Phone, MapPin },
     highlights: [
@@ -32,7 +25,7 @@ export const education = [
 
 export const certificates = [
     { name: "정보처리기사", year: "2025 (예정)", issuer: "한국산업인력공단", icon: Award },
-    { name: "SQLD (SQL Developer)", year: "2024", issuer: "한국데이터산업진흥원", icon: Award },
+    // { name: "SQLD (SQL Developer)", year: "2024", issuer: "한국데이터산업진흥원", icon: Award },
 ] as const;
 
 export const skills = {
@@ -57,6 +50,7 @@ export const skills = {
     be: [
         "Java",
         "Spring Boot",
+        "Spring MVC",
         "RESTful API",
         "Spring Security",
         "OAuth2",
@@ -67,7 +61,7 @@ export const skills = {
         "MySQL",
         "PostgreSQL",
         "Oracle",
-        "Redis (Session/Cache)",
+        "Redis (Session)",
     ],
     infra: [
         "AWS EC2",
@@ -88,8 +82,10 @@ export const skills = {
         "Eclipse",
         "Git",
         "GitHub Desktop",
-        "Postman / Hoppscotch",
+        "Postman",
         "pgAdmin",
+        "DBeaver",
+        "SQL Developer",
     ],
     soft: [
         "문제 해결",
@@ -122,10 +118,8 @@ export const projects = [
         role: "Full-stack(개인)",
         contributions: [
             "PostgreSQL 기준 스키마 설계: citext 확장, 모든 PK UUID, surveys/sections/questions/options/responses 등 핵심 테이블 구성",
-            "Spring Boot REST API(에러 응답 규약, DTO 계층, 페이징/정렬/필터) 설계",
             "React + Vite + Tailwind + shadcn/ui로 UI 컴포넌트 시스템 구축",
             "Zustand/React Query로 상태/비동기 캐싱 전략 수립",
-            "Docker Compose로 BE/FE/Redis 통합 실행, AWS EC2 + RDS 배포 경험",
         ],
         outcomes: [
             "코드/상태 관리 일원화로 화면 전환 및 응답 처리 단순화",
@@ -184,7 +178,7 @@ export const experiences = [
     {
         role: "한국폴리텍대학 스마트소프트웨어 하이테크 과정",
         period: "2025.03 ~ 2025.10",
-        desc: "Spring Boot + React 기반 풀스택 및 DB/클라우드 기초, 팀 프로젝트 수행",
+        desc: "MyBatis, Spring MVC, eGovFrame 기반 웹 개발 심화 학습",
         icon: Briefcase,
     },
 ] as const;
@@ -194,11 +188,9 @@ export const howIWork = [
     "회사와 사용자 모두에게 긍정적 임팩트를 만드는 일을 선호합니다.",
     "문제가 생기면 상황 안에서 앞으로 나아갈 대안을 즉시 모색합니다.",
     "함께 정한 기한을 지키려고 노력합니다.",
-    // 협업/코드리뷰/문서화 관련 추가 문장
     "Git Flow 기반 협업과 코드리뷰에 익숙하며, PR 설명/테스트 로그/이슈 링크로 문서화를 습관화합니다.",
 ] as const;
 
-// (선택) 소개용 한 줄 모토/키워드
 export const motto = {
     icon: Lightbulb,
     lines: ["문제의 본질을 정의하고, 작게 쪼개서 빠르게 검증합니다.", "사용자 경험과 개발자 경험을 동시에 개선합니다."],
