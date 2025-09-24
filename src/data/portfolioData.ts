@@ -145,7 +145,7 @@ export const projects = [
         tags: ["React", "Java", "Spring Boot", "Spring Security", "MySQL", "Team"],
         summary: "상품, 장바구니, 결제, 관리자 기능",
         links: [
-            { label: "문서", href: "https://www.notion.so/1-Store_24-6ad69d299319406bb3bf402e5ff5d5bb?pvs=21" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/store" },
         ] as ProjectLink[],
         role: "Full-stack",
         contributions: [

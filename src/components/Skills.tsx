@@ -1,6 +1,6 @@
 import Section from "./Section";
 import Chip from "./Chip";
-import { Cpu, Database, Wrench, CheckCircle2 } from "lucide-react";
+import { Cpu, Database, Wrench } from "lucide-react";
 import { skills } from "@/data/portfolioData";
 
 

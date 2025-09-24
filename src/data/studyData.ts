@@ -63,3 +63,31 @@ export const formCaseStudyData: CaseStudyData = {
         { label: "GitHub Back", href: "https://github.com/KRMGJ/Form-B" },
     ],
 };
+
+export const storeCaseStudyData: CaseStudyData = {
+    title: "1차 팀 프로젝트 — Store_24",
+    subtitle: "편의점형 커머스: 상품/장바구니/결제, 주문조회, 리뷰",
+    summary:
+        "소상공인 대상 전자상거래 데모. 상품 목록/상세/리뷰, 장바구니·주문/결제(다양한 결제수단), 주문조회/상태 추적, 검색·정렬을 구현.",
+    role: "Full-stack (팀, 담당: 마이페이지·고객센터 제외 전반)",
+    period: "2024-06-13 ~ 2024-06-28",
+    members: "4명",
+    tags: ["React", "TypeScript", "Spring Boot", "MySQL", "REST API", "Gradle", "OAuth", "Daum 주소검색", "Toss Pay"],
+    features: [
+        { title: "회원", items: ["회원가입/로그인/로그아웃", "메일 인증, 비밀번호 찾기", "마이페이지(정보 조회/수정)"], },
+        { title: "상품", items: ["상품 등록/수정/삭제(관리)", "목록/상세/구매, 리뷰", "장바구니 수량/삭제/총액"], },
+        { title: "결제", items: ["배송지 도로명 주소 검색, 연락처 입력", "신용카드·네이버페이·카카오페이·토스·페이코·계좌이체"], },
+        { title: "주문 조회", items: ["주문 내역 목록/상세", "배송 상태 추적, 재구매/리뷰/문의 액션"], },
+        { title: "검색/정렬", items: ["상품명/카테고리 검색", "가격/이름 정렬"], },
+    ],
+    outcomes: ["REST API·CRUD·DTO 구조 이해", "주문/결제 흐름 UX 설계 경험", "OAuth/주소검색/결제 연동 경험"],
+    screenshots: [
+        { src: "/images/store/cart.png", caption: "장바구니" },
+        { src: "/images/store/orders.png", caption: "주문 목록/상세 액션" },
+        { src: "/images/store/list.png", caption: "상품 목록·카테고리·검색" },
+    ],
+    links: [
+        { label: "GitHub Front", href: "https://github.com/KRMGJ/store24H-front" },
+        { label: "GitHub Back", href: "https://github.com/KRMGJ/store24H-back" },
+    ],
+};

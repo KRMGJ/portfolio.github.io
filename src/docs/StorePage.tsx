@@ -1,7 +1,6 @@
-import React from 'react'
+import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
+import { storeCaseStudyData } from "@/data/studyData";
 
-export default function StorePage() {
-    return (
-        <div>StorePage</div>
-    )
+export function StorePage() {
+    return <ProjectCaseStudy data={storeCaseStudyData} />;
 }
