@@ -124,12 +124,13 @@ export const projects = [
         outcomes: [
             "코드/상태 관리 일원화로 화면 전환 및 응답 처리 단순화",
             "배포 자동화 및 환경 분리로 운영 안정성 향상",
+            "OpenAI API 연동으로 설문 문항 자동 생성 기능 구현",
         ],
         web: { href: "https://www.mg03.cloud/" },
     },
     {
         name: "2차 팀 프로젝트 — Where To Go",
-        tags: ["React", "Node", "Express", "REST", "Team"],
+        tags: ["React", "TypeScript", "Vite", "Express", "REST", "MySQL","Team"],
         summary: "여행/로컬 정보 탐색 웹앱. 검색/필터/위시리스트, 카드형 리스트/모달 상세 구현.",
         links: [
             { label: "문서", href: "https://www.notion.so/2-Where-To-Go-560d7a75bb9b4731950adb53f126afc6?pvs=21" },
@@ -138,31 +139,51 @@ export const projects = [
         contributions: [
             "검색/필터 UI 및 페이지네이션 패턴 구현",
             "컴포넌트 구조화, 상태/라우팅 설계",
+            "RESTful 설계, Pagination/Sorting/Filtering 패턴 구현",
+            "Kakao Maps API 연동",
+            "공공 데이터 포털 API 연동",
         ],
-        outcomes: ["카드/모달 조합으로 탐색 경험 개선", "사용자 흐름에 맞춘 UX 설계 경험 축적"],
+        outcomes: [
+            "카드/모달 조합으로 탐색 경험 개선",
+            "사용자 흐름에 맞춘 UX 설계 경험 축적",
+            "Kakao Maps API 및 공공 데이터 포털 API 연동 경험 축적"
+        ],
         web: { href: null },
     },
     {
         name: "1차 팀 프로젝트 — Store_24",
-        tags: ["React", "Java", "Spring", "Oracle", "Team"],
+        tags: ["React", "Java", "Spring Boot", "Spring Security", "MySQL", "Team"],
         summary: "편의점형 커머스 데모. 상품/장바구니/결제 UX 시나리오 및 관리자 화면 설계.",
         links: [
             { label: "문서", href: "https://www.notion.so/1-Store_24-6ad69d299319406bb3bf402e5ff5d5bb?pvs=21" },
         ] as ProjectLink[],
         role: "Full-stack",
-        contributions: ["장바구니/결제 흐름 UI 설계", "관리자 테이블/필터 화면 제작"],
-        outcomes: ["상품/장바구니/결제 흐름에 맞춘 UX 설계 경험 축적"],
+        contributions: [
+            "장바구니/결제 흐름 UI 설계", "관리자 테이블/필터 화면 제작",
+            "JPA 기반 ORM 설계 및 API 구현",
+            "Spring Security 기반 인증/인가 구현",
+            "Toss Payments 가상 결제 연동",
+        ],
+        outcomes: [
+            "상품/장바구니/결제 흐름에 맞춘 UX 설계 경험 축적",
+            "JPA 기반 ORM 설계 및 Spring Security 이해도 향상",
+            "Toss Payments 가상 결제 연동 향상",
+        ],
         web: { href: null },
     },
     {
         name: "1차 개인 프로젝트 — 개인 블로그 웹앱",
-        tags: ["React", "Bootstrap", "Vercel", "Solo"],
+        tags: ["React", "Bootstrap", "Vercel", "TypeScript", "Solo"],
         summary: "학습용 개인 웹앱. 폼 검증, 모듈식 컴포넌트, 라우팅, 코드 스플리팅 도입.",
         links: [
             { label: "문서", href: "https://www.notion.so/1-8949d279e46643acb2568a2dcd556a1c?pvs=21" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
-        contributions: ["Vercel 배포 파이프라인 구성", "Form 검증/라우트 설계"],
+        contributions: [
+            "Vercel 배포 파이프라인 구성", "Form 검증/라우트 설계",
+            "재사용 가능한 컴포넌트/훅 라이브러리 구축",
+            "YouTube Data API v3 연동",
+        ],
         outcomes: ["모듈식 컴포넌트 설계 경험 축적"],
         web: { href: "https://blog-gamma-ashy-41.vercel.app/" },
     },
@@ -177,7 +198,7 @@ export const experiences = [
     },
     {
         role: "한국폴리텍대학 스마트소프트웨어 하이테크 과정",
-        period: "2025.03 ~ 2025.10",
+        period: "2025.03 ~ 2025.12 (예정)",
         desc: "MyBatis, Spring MVC, eGovFrame 기반 웹 개발 심화 학습",
         icon: Briefcase,
     },
