@@ -22,6 +22,7 @@ export const blogCaseStudyData: CaseStudyData = {
     },
     outcomes: ["소셜 로그인, REST 통신 이해", "CRUD/검색/WebSocket 경험", "React + Spring Boot 풀스택 학습"],
     screenshots: [
+        { src: "/images/blog/erd.png", caption: "ERD" },
         { src: "/images/blog/cover.png", caption: "메인 페이지" },
         { src: "/images/blog/detail.png", caption: "게시글 상세" },
         { src: "/images/blog/mypage.png", caption: "마이페이지" },
