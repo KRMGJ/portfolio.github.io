@@ -24,7 +24,7 @@ export const education = [
 ] as const;
 
 export const certificates = [
-    { name: "정보처리기사", year: "2025 (예정)", issuer: "한국산업인력공단", icon: Award },
+    { name: "정보처리기사", year: "2025 필기 합격", issuer: "한국산업인력공단", icon: Award },
     // { name: "SQLD (SQL Developer)", year: "2024", issuer: "한국데이터산업진흥원", icon: Award },
 ] as const;
 
@@ -98,93 +98,90 @@ export const skills = {
     ],
 } as const;
 
-export const webDevFocus = [
-    { icon: Cpu, title: "Front-End", desc: "React + Vite, CSR/SSR, 상태관리(Zustand/React Query), 접근성/반응형 UI" },
-    { icon: Database, title: "Data & API", desc: "RESTful 설계, Pagination/Sorting/Filtering 패턴, DTO 및 에러 응답 규약" },
-    { icon: Wrench, title: "DX & 생산성", desc: "Tailwind + shadcn/ui, 재사용 가능한 컴포넌트/훅 라이브러리, 코드 스플리팅" },
-    { icon: Rocket, title: "성능/품질", desc: "Lighthouse 점검, 번들 최적화, 이미지 최적화, CI/CD 품질 검사" },
-] as const;
-
 export type ProjectLink = { label: string; href: string };
 
 export const projects = [
     {
         name: "2차 개인 프로젝트 — 설문조사 웹앱 (Form)",
-        tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "Spring Boot", "PostgreSQL", "Docker", "Solo"],
-        summary: "설문 생성/배포/응답/결과 시각화 풀스택 웹앱. 재사용 가능한 UI/훅, 상태 관리 일원화, 반응형 UI 구현.",
+        tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "Spring Boot", "PostgreSQL", "Docker", "Redis", "OpenAI"],
+        summary: "설문 생성/배포, 응답 관리, 결과 시각화",
         links: [
             { label: "문서", href: "https://garrulous-erica-128.notion.site/2-Form-277c10a0c0d28076b251ef181043722e?pvs=73" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
         contributions: [
-            "PostgreSQL 기준 스키마 설계: citext 확장, 모든 PK UUID, surveys/sections/questions/options/responses 등 핵심 테이블 구성",
-            "React + Vite + Tailwind + shadcn/ui로 UI 컴포넌트 시스템 구축",
-            "Zustand/React Query로 상태/비동기 캐싱 전략 수립",
+            "PostgreSQL 스키마 설계",
+            "React + Tailwind UI 시스템",
+            "Zustand/React Query 상태 관리",
         ],
         outcomes: [
-            "코드/상태 관리 일원화로 화면 전환 및 응답 처리 단순화",
-            "배포 자동화 및 환경 분리로 운영 안정성 향상",
-            "OpenAI API 연동으로 설문 문항 자동 생성 기능 구현",
+            "코드/상태 관리 단순화",
+            "배포 자동화 & 환경 분리",
+            "OpenAI 설문 문항 생성",
         ],
         web: { href: "https://www.mg03.cloud/" },
     },
     {
         name: "2차 팀 프로젝트 — Where To Go",
-        tags: ["React", "TypeScript", "Vite", "Express", "REST", "MySQL","Team"],
-        summary: "여행/로컬 정보 탐색 웹앱. 검색/필터/위시리스트, 카드형 리스트/모달 상세 구현.",
+        tags: ["React", "TypeScript", "Vite", "Express", "REST", "MySQL", "Team"],
+        summary: "여행 검색, 필터, 위시리스트, 지도 연동",
         links: [
             { label: "문서", href: "https://www.notion.so/2-Where-To-Go-560d7a75bb9b4731950adb53f126afc6?pvs=21" },
         ] as ProjectLink[],
         role: "Full-stack",
         contributions: [
-            "검색/필터 UI 및 페이지네이션 패턴 구현",
-            "컴포넌트 구조화, 상태/라우팅 설계",
-            "RESTful 설계, Pagination/Sorting/Filtering 패턴 구현",
+            "검색/필터 UI + 페이지네이션",
+            "컴포넌트 구조화 & 라우팅",
+            "REST API + 정렬/필터링",
             "Kakao Maps API 연동",
-            "공공 데이터 포털 API 연동",
+            "공공 데이터 API 연동",
         ],
         outcomes: [
-            "카드/모달 조합으로 탐색 경험 개선",
-            "사용자 흐름에 맞춘 UX 설계 경험 축적",
-            "Kakao Maps API 및 공공 데이터 포털 API 연동 경험 축적"
+            "카드/모달 UX 개선",
+            "사용자 흐름 중심 UX",
+            "외부 API 연동 경험",
         ],
         web: { href: null },
     },
     {
         name: "1차 팀 프로젝트 — Store_24",
         tags: ["React", "Java", "Spring Boot", "Spring Security", "MySQL", "Team"],
-        summary: "편의점형 커머스 데모. 상품/장바구니/결제 UX 시나리오 및 관리자 화면 설계.",
+        summary: "상품, 장바구니, 결제, 관리자 기능",
         links: [
             { label: "문서", href: "https://www.notion.so/1-Store_24-6ad69d299319406bb3bf402e5ff5d5bb?pvs=21" },
         ] as ProjectLink[],
         role: "Full-stack",
         contributions: [
-            "장바구니/결제 흐름 UI 설계", "관리자 테이블/필터 화면 제작",
-            "JPA 기반 ORM 설계 및 API 구현",
-            "Spring Security 기반 인증/인가 구현",
-            "Toss Payments 가상 결제 연동",
+            "장바구니/결제 UI 설계",
+            "관리자 테이블/필터 화면",
+            "JPA 기반 ORM + API",
+            "Spring Security 인증/인가",
+            "Toss Payments 결제 연동",
         ],
         outcomes: [
-            "상품/장바구니/결제 흐름에 맞춘 UX 설계 경험 축적",
-            "JPA 기반 ORM 설계 및 Spring Security 이해도 향상",
-            "Toss Payments 가상 결제 연동 향상",
+            "결제 흐름 UX 설계",
+            "ORM & Security 이해도 향상",
+            "Toss 결제 연동 경험",
         ],
         web: { href: null },
     },
     {
         name: "1차 개인 프로젝트 — 개인 블로그 웹앱",
-        tags: ["React", "Bootstrap", "Vercel", "TypeScript", "Solo"],
-        summary: "학습용 개인 웹앱. 폼 검증, 모듈식 컴포넌트, 라우팅, 코드 스플리팅 도입.",
+        tags: ["React", "Bootstrap", "Vercel", "TypeScript"],
+        summary: "폼 검증, 모듈 컴포넌트, 라우팅",
         links: [
             { label: "문서", href: "https://www.notion.so/1-8949d279e46643acb2568a2dcd556a1c?pvs=21" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
         contributions: [
-            "Vercel 배포 파이프라인 구성", "Form 검증/라우트 설계",
-            "재사용 가능한 컴포넌트/훅 라이브러리 구축",
-            "YouTube Data API v3 연동",
+            "Vercel 배포 파이프라인",
+            "폼 검증 & 라우트 설계",
+            "재사용 컴포넌트/훅",
+            "YouTube Data API 연동",
         ],
-        outcomes: ["모듈식 컴포넌트 설계 경험 축적"],
+        outcomes: [
+            "모듈식 컴포넌트 설계",
+        ],
         web: { href: "https://blog-gamma-ashy-41.vercel.app/" },
     },
 ] as const;

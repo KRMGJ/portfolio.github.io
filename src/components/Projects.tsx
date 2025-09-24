@@ -4,8 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { projects } from "@/data/portfolioData";
+import { useState } from "react";
 
 export default function Projects() {
+    const [open, setOpen] = useState(false);
+
     return (
         <Section title="프로젝트">
             <div id="projects" className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -32,11 +35,9 @@ export default function Projects() {
 
                             {/* 기여 */}
                             {p.contributions && (
-                                <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                                    {p.contributions.map((c: string, idx: number) => (
-                                        <li key={idx}>{c}</li>
-                                    ))}
-                                </ul>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {p.contributions.join(", ")}
+                                </p>
                             )}
 
                             {/* 성과 */}
