@@ -52,6 +52,7 @@ export const formCaseStudyData: CaseStudyData = {
     ],
     outcomes: ["코드/상태 관리 단순화", "배포 자동화 & 환경 분리", "OpenAI 설문 문항 생성"],
     screenshots: [
+        { src: "/images/form/erd.png", caption: "ERD" },
         { src: "/images/form/home.png", caption: "랜딩/추천 설문" },
         { src: "/images/form/create.png", caption: "설문 생성" },
         { src: "/images/form/analytics.png", caption: "통계/분석" },
