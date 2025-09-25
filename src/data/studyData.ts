@@ -83,6 +83,7 @@ export const storeCaseStudyData: CaseStudyData = {
     ],
     outcomes: ["REST API·CRUD·DTO 구조 이해", "주문/결제 흐름 UX 설계 경험", "OAuth/주소검색/결제 연동 경험"],
     screenshots: [
+        { src: "/images/store/erd.png", caption: "ERD" },
         { src: "/images/store/cart.png", caption: "장바구니" },
         { src: "/images/store/orders.png", caption: "주문 목록/상세 액션" },
         { src: "/images/store/list.png", caption: "상품 목록·카테고리·검색" },
@@ -114,6 +115,7 @@ export const whereToGoCaseStudyData: CaseStudyData = {
         "UI/UX 디자인 중심으로 사용자 경험을 더 깊이 이해",
     ],
     screenshots: [
+        { src: "/images/wtg/erd.png", caption: "ERD" },
         { src: "/images/wtg/home.png", caption: "메인 대시보드" },
         { src: "/images/wtg/festival-list.png", caption: "축제 목록" },
         { src: "/images/wtg/festival-detail.png", caption: "축제 상세" },
