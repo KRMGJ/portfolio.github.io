@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Users, Briefcase, Lightbulb, Mail, Phone, MapPin, Github, Globe } from "lucide-react";
+import { GraduationCap, Award, Users, Briefcase, Lightbulb, Mail, Phone, MapPin, Github } from "lucide-react";
 
 export const profile = {
     name: "장민규",
@@ -116,7 +116,7 @@ export const projects = [
         ],
         web: { href: null },
         links: [
-            { label: "문서", href: "http://localhost:5173/youtube" }
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/youtube" }
         ],
     },
     {

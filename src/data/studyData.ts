@@ -22,10 +22,10 @@ export const blogCaseStudyData: CaseStudyData = {
     },
     outcomes: ["소셜 로그인, REST 통신 이해", "CRUD/검색/WebSocket 경험", "React + Spring Boot 풀스택 학습"],
     screenshots: [
-        { src: "/images/blog/erd.png", caption: "ERD" },
-        { src: "/images/blog/cover.png", caption: "메인 페이지" },
-        { src: "/images/blog/detail.png", caption: "게시글 상세" },
-        { src: "/images/blog/mypage.png", caption: "마이페이지" },
+        { src: "/images/blog/erd.webp", caption: "ERD" },
+        { src: "/images/blog/cover.webp", caption: "메인 페이지" },
+        { src: "/images/blog/detail.webp", caption: "게시글 상세" },
+        { src: "/images/blog/mypage.webp", caption: "마이페이지" },
     ],
     links: [
         { label: "website", href: "https://blog-gamma-ashy-41.vercel.app/" },
@@ -56,11 +56,11 @@ export const formCaseStudyData: CaseStudyData = {
     },
     outcomes: ["코드/상태 관리 단순화", "배포 자동화 & 환경 분리", "OpenAI 설문 문항 생성"],
     screenshots: [
-        { src: "/images/form/erd.png", caption: "ERD" },
-        { src: "/images/form/home.png", caption: "랜딩/추천 설문" },
-        { src: "/images/form/create.png", caption: "설문 생성" },
-        { src: "/images/form/analytics.png", caption: "통계/분석" },
-        { src: "/images/form/response-detail.png", caption: "응답 상세" },
+        { src: "/images/form/erd.webp", caption: "ERD" },
+        { src: "/images/form/home.webp", caption: "랜딩/추천 설문" },
+        { src: "/images/form/create.webp", caption: "설문 생성" },
+        { src: "/images/form/analytics.webp", caption: "통계/분석" },
+        { src: "/images/form/response-detail.webp", caption: "응답 상세" },
     ],
     links: [
         { label: "website", href: "https://www.mg03.cloud/" },
@@ -92,10 +92,10 @@ export const storeCaseStudyData: CaseStudyData = {
     },
     outcomes: ["REST API·CRUD·DTO 구조 이해", "주문/결제 흐름 UX 설계 경험", "OAuth/주소검색/결제 연동 경험"],
     screenshots: [
-        { src: "/images/store/erd.png", caption: "ERD" },
-        { src: "/images/store/cart.png", caption: "장바구니" },
-        { src: "/images/store/orders.png", caption: "주문 목록/상세 액션" },
-        { src: "/images/store/list.png", caption: "상품 목록·카테고리·검색" },
+        { src: "/images/store/erd.webp", caption: "ERD" },
+        { src: "/images/store/cart.webp", caption: "장바구니" },
+        { src: "/images/store/orders.webp", caption: "주문 목록/상세 액션" },
+        { src: "/images/store/list.webp", caption: "상품 목록·카테고리·검색" },
     ],
     links: [
         { label: "GitHub Front", href: "https://github.com/KRMGJ/store24H-front" },
@@ -129,15 +129,15 @@ export const whereToGoCaseStudyData: CaseStudyData = {
         "UI/UX 디자인 중심으로 사용자 경험을 더 깊이 이해",
     ],
     screenshots: [
-        { src: "/images/wtg/erd.png", caption: "ERD" },
-        { src: "/images/wtg/home.png", caption: "메인 대시보드" },
-        { src: "/images/wtg/festival-list.png", caption: "축제 목록" },
-        { src: "/images/wtg/festival-detail.png", caption: "축제 상세" },
-        { src: "/images/wtg/group-detail.png", caption: "모임 상세" },
-        { src: "/images/wtg/gallery.png", caption: "사진첩" },
-        { src: "/images/wtg/chat.png", caption: "채팅방" },
-        { src: "/images/wtg/alert.png", caption: "채팅 알림" },
-        { src: "/images/wtg/admin.png", caption: "회원 관리 (관리자)" },
+        { src: "/images/wtg/erd.webp", caption: "ERD" },
+        { src: "/images/wtg/home.webp", caption: "메인 대시보드" },
+        { src: "/images/wtg/festival-list.webp", caption: "축제 목록" },
+        { src: "/images/wtg/festival-detail.webp", caption: "축제 상세" },
+        { src: "/images/wtg/group-detail.webp", caption: "모임 상세" },
+        { src: "/images/wtg/gallery.webp", caption: "사진첩" },
+        { src: "/images/wtg/chat.webp", caption: "채팅방" },
+        { src: "/images/wtg/alert.webp", caption: "채팅 알림" },
+        { src: "/images/wtg/admin.webp", caption: "회원 관리 (관리자)" },
     ],
     links: [
         { label: "GitHub Front", href: "https://github.com/KRMGJ/WhereToGo_F" },
@@ -185,11 +185,11 @@ export const youtubeCaseStudyData: CaseStudyData = {
         "JSP 기반에서도 현대적 UX 구현 가능성을 검증"
     ],
     screenshots: [
-        { src: "/images/youtube/main.png", caption: "메인 화면" },
-        { src: "/images/youtube/search.png", caption: "검색 결과 페이지" },
-        { src: "/images/youtube/playlist.png", caption: "플레이리스트 목록" },
-        { src: "/images/youtube/playlist-detail.png", caption: "플레이리스트 상세" },
-        { src: "/images/youtube/detail.png", caption: "영상 상세 페이지" }
+        { src: "/images/youtube/main.webp", caption: "메인 화면" },
+        { src: "/images/youtube/search.webp", caption: "검색 결과 페이지" },
+        { src: "/images/youtube/playlist.webp", caption: "플레이리스트 목록" },
+        { src: "/images/youtube/playlist-detail.webp", caption: "플레이리스트 상세" },
+        { src: "/images/youtube/detail.webp", caption: "영상 상세 페이지" }
     ],
     links: [
         { label: "GitHub", href: "https://github.com/KRMGJ/Music" }
