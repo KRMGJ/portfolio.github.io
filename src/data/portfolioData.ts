@@ -8,7 +8,6 @@ export const profile = {
     email: "dur369667@gmail.com",
     phone: "+82 10-9305-6649",
     links: [
-        { label: "Notion", href: "https://www.notion.so/c197098381a141ff8db30429fa5dc17b?pvs=25#3c7aef3ec6da48128c09d07787a732e4", icon: Globe },
         { label: "Github", href: "https://github.com/KRMGJ", icon: Github },
     ],
     icons: { Mail, Phone, MapPin },
@@ -98,6 +97,28 @@ export const skills = {
 export type ProjectLink = { label: string; href: string };
 
 export const projects = [
+    {
+        name: "3차 개인 프로젝트 — YouTube Music",
+        tags: ["Spring MVC", "JSP", "Oracle", "MyBatis", "YouTube API", "Legacy System"],
+        summary:
+            "YouTube API를 활용해 영상 검색과 플레이리스트 관리 기능을 구현.",
+        role: "Full-Stack Developer",
+        contributions: [
+            "Oracle DB 및 ERD 설계",
+            "Spring MVC + MyBatis 구조 설계",
+            "YouTube API 연동 (영상, 댓글, 채널)",
+        ],
+        outcomes: [
+            "Spring MVC 기반 레거시 구조 완성",
+            "Oracle/MyBatis로 안정적 데이터 관리",
+            "YouTube API 연동 경험 축적",
+            "JSP 환경에서 현대적 UX 구현"
+        ],
+        web: { href: null },
+        links: [
+            { label: "문서", href: "http://localhost:5173/youtube" }
+        ],
+    },
     {
         name: "2차 개인 프로젝트 — 설문조사 웹앱 (Form)",
         tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "Spring Boot", "PostgreSQL", "Docker", "Redis", "OpenAI"],

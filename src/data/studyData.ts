@@ -5,7 +5,7 @@ export const blogCaseStudyData: CaseStudyData = {
     subtitle: "일기장처럼 사용할 수 있는 개인 블로그",
     summary:
         "게시판 CRUD, 소셜 로그인(OAuth), 댓글/좋아요/검색, YouTube 기반 뮤직 플레이어까지 포함한 학습용 풀스택 프로젝트.",
-    role: "Full‑stack (개인)",
+    role: "Full‑Stack (개인)",
     period: "2024‑05‑10 ~ 2024‑05‑31",
     members: "1명",
     tags: ["React", "TypeScript", "Spring Boot", "MySQL", "REST API", "OAuth", "YouTube API"],
@@ -29,7 +29,6 @@ export const blogCaseStudyData: CaseStudyData = {
     ],
     links: [
         { label: "website", href: "https://blog-gamma-ashy-41.vercel.app/" },
-        { label: "Notion", href: "https://garrulous-erica-128.notion.site/1-Blog-8f3b1e2b1f0a4e6f92e2f3c2a5e2b3d4" },
         { label: "GitHub Front", href: "https://github.com/KRMGJ/Blog_Front" },
         { label: "GitHub Back", href: "https://github.com/KRMGJ/Blog_Back" },
     ],
@@ -40,7 +39,7 @@ export const formCaseStudyData: CaseStudyData = {
     subtitle: "설문 생성/배포, 응답 관리, 결과 시각화",
     summary:
         "설문 작성·배포(도메인/비밀번호/기간/응답 제한), 응답 세션 추적, 실시간 통계와 AI 요약/인사이트 제공. FE는 React + Zustand/React Query, BE는 Spring Boot, DB는 PostgreSQL(UUID, citext) 기반.",
-    role: "Full‑stack (개인)",
+    role: "Full‑Stack (개인)",
     period: "2025‑08‑29 ~ 2025‑09‑23",
     members: "1명",
     tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "TailwindCSS", "shadcn/ui", "Spring Boot", "PostgreSQL", "Docker", "OpenAI API"],
@@ -50,6 +49,11 @@ export const formCaseStudyData: CaseStudyData = {
         { title: "응답 수집", items: ["세션 추적(시작/제출, 채널/디바이스)", "답변 저장(텍스트/숫자/날짜/JSON)", "운영자 메모/핀"] },
         { title: "통계 & 분석", items: ["실시간 통계(조회/응답/소요시간)", "AI 요약/인사이트", "스냅샷(JSON) 기반 후처리"] },
     ],
+    architecture: {
+        environment: "Windows 10, Docker",
+        stack: "React, TypeScript, Vite, Zustand, React Query, TailwindCSS, Spring Boot, PostgreSQL",
+        api: "OpenAI API (gpt-3.5-turbo)",
+    },
     outcomes: ["코드/상태 관리 단순화", "배포 자동화 & 환경 분리", "OpenAI 설문 문항 생성"],
     screenshots: [
         { src: "/images/form/erd.png", caption: "ERD" },
@@ -60,7 +64,6 @@ export const formCaseStudyData: CaseStudyData = {
     ],
     links: [
         { label: "website", href: "https://www.mg03.cloud/" },
-        { label: "Notion", href: "https://garrulous-erica-128.notion.site/2-Form-277c10a0c0d28076b251ef181043722e" },
         { label: "GitHub Front", href: "https://github.com/KRMGJ/Form-F" },
         { label: "GitHub Back", href: "https://github.com/KRMGJ/Form-B" },
     ],
@@ -71,7 +74,7 @@ export const storeCaseStudyData: CaseStudyData = {
     subtitle: "편의점형 커머스: 상품/장바구니/결제, 주문조회, 리뷰",
     summary:
         "소상공인 대상 전자상거래 데모. 상품 목록/상세/리뷰, 장바구니·주문/결제(다양한 결제수단), 주문조회/상태 추적, 검색·정렬을 구현.",
-    role: "Full-stack (팀, 담당: 마이페이지·고객센터 제외 전반)",
+    role: "Full-Stack (팀, 담당: 회원(정보 조회/수정), 상품 등록·수정·삭제, 결제 모듈, 장바구니, 검색·정렬)",
     period: "2024-06-13 ~ 2024-06-28",
     members: "4명",
     tags: ["React", "TypeScript", "Spring Boot", "MySQL", "REST API", "Gradle", "OAuth", "Daum 주소검색", "Toss Pay"],
@@ -82,6 +85,11 @@ export const storeCaseStudyData: CaseStudyData = {
         { title: "주문 조회", items: ["주문 내역 목록/상세", "배송 상태 추적, 재구매/리뷰/문의 액션"], },
         { title: "검색/정렬", items: ["상품명/카테고리 검색", "가격/이름 정렬"], },
     ],
+    architecture: {
+        environment: "Windows 10",
+        stack: "React, TypeScript, Spring Boot, MySQL, REST API, Gradle",
+        api: "daum 주소검색 API, Toss Payments API",
+    },
     outcomes: ["REST API·CRUD·DTO 구조 이해", "주문/결제 흐름 UX 설계 경험", "OAuth/주소검색/결제 연동 경험"],
     screenshots: [
         { src: "/images/store/erd.png", caption: "ERD" },
@@ -100,7 +108,7 @@ export const whereToGoCaseStudyData: CaseStudyData = {
     subtitle: "여행/로컬 정보 탐색 · 소모임 플랫폼",
     summary:
         "축제 정보와 소모임을 연결하는 커뮤니티 플랫폼. 축제/모임 등록·검색·리뷰·채팅 기능과 관리자 공지/회원 관리까지 포함.",
-    role: "Full-stack (팀, 담당: 회원가입/로그인, 마이페이지, 고객센터, 공지사항, 길찾기 제외 전체)",
+    role: "Full-Stack (팀, 담당: 모임 및 게시판, 축제, 관리자, 검색/필터, 채팅, 알림)",
     period: "2024-07-01 ~ 2024-08-09",
     members: "4명",
     tags: ["React", "TypeScript", "Spring Boot", "MySQL", "REST API", "Gradle", "HTML/CSS/JavaScript", "Kakao Map API", "한국관광공사 API"],
@@ -112,6 +120,11 @@ export const whereToGoCaseStudyData: CaseStudyData = {
         { title: "검색/필터", items: ["모임 카테고리/지역 필터링", "태그 검색", "축제 지역 필터링"], },
         { title: "축제", items: ["별점 리뷰", "찜(좋아요)", "별점 Top5", "카카오맵 길찾기"], },
     ],
+    architecture: {
+        environment: "Windows 10",
+        stack: "React, TypeScript, Spring Boot, MySQL, REST API, Gradle",
+        api: "Kakao Maps API, 한국관광공사 축제 정보 API",
+    },
     outcomes: [
         "UI/UX 디자인 중심으로 사용자 경험을 더 깊이 이해",
     ],
@@ -130,4 +143,55 @@ export const whereToGoCaseStudyData: CaseStudyData = {
         { label: "GitHub Front", href: "https://github.com/KRMGJ/WhereToGo_F" },
         { label: "GitHub Back", href: "https://github.com/KRMGJ/WhereToGo_B" },
     ],
+};
+
+export const youtubeCaseStudyData: CaseStudyData = {
+    title: "YouTube Music (Spring MVC & Oracle)",
+    subtitle: "YouTube Data API 기반의 레거시 웹서비스 구현",
+    summary:
+        "Spring Boot가 아닌 순수 Spring MVC + JSP + MyBatis + Oracle 환경에서 구축한 레거시 아키텍처 프로젝트. YouTube Data API를 통해 영상, 채널, 댓글, 플레이리스트 정보를 가져오며, JSP 기반으로 검색/정렬/플레이리스트 관리 UI를 구성.",
+    role: "Full-Stack (개인)",
+    period: "2025-09-26 ~ 2025-10-10",
+    tags: ["Spring MVC", "JSP", "Oracle", "MyBatis", "YouTube API", "OAuth2", "Bootstrap"],
+    features: [
+        {
+            title: "핵심 기능",
+            items: [
+                "YouTube Data API 연동 (영상/채널/댓글/플레이리스트)",
+                "Oracle 기반 DB 스키마 및 시퀀스 설계",
+                "AJAX 비동기 검색 및 더보기 UI 구현",
+                "조회수순, 최신순, 길이순 정렬 기능",
+                "OAuth2 로그인 및 사용자별 플레이리스트 관리"
+            ],
+        },
+        {
+            title: "백엔드 설계",
+            items: [
+                "Controller-Service-DAO 3계층 구조로 분리",
+                "MyBatis XML Mapper 기반 쿼리 관리 및 동적 조건 처리",
+                "Oracle 트랜잭션 관리 및 제약조건 설계",
+                "예외처리 및 API Quota 초과 대응 로직 구현"
+            ],
+        },
+    ],
+    architecture: {
+        environment: "Spring MVC + JSP + Oracle + MyBatis",
+        stack: "Java 11, Servlet, JSP, JSTL, Bootstrap, jQuery",
+        api: "YouTube Data API v3 (search, playlist, comment, channel)"
+    },
+    outcomes: [
+        "Boot 환경 없이 완전한 Spring MVC 구조 실현",
+        "YouTube API를 통한 실시간 데이터 처리 성공",
+        "JSP 기반에서도 현대적 UX 구현 가능성을 검증"
+    ],
+    screenshots: [
+        { src: "/images/youtube/main.png", caption: "메인 화면" },
+        { src: "/images/youtube/search.png", caption: "검색 결과 페이지" },
+        { src: "/images/youtube/playlist.png", caption: "플레이리스트 목록" },
+        { src: "/images/youtube/playlist-detail.png", caption: "플레이리스트 상세" },
+        { src: "/images/youtube/detail.png", caption: "영상 상세 페이지" }
+    ],
+    links: [
+        { label: "GitHub", href: "https://github.com/KRMGJ/Music" }
+    ]
 };
