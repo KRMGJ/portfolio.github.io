@@ -185,6 +185,7 @@ export const youtubeCaseStudyData: CaseStudyData = {
         "JSP 기반에서도 현대적 UX 구현 가능성을 검증"
     ],
     screenshots: [
+        { src: "/images/youtube/erd.webp", caption: "ERD" },
         { src: "/images/youtube/main.webp", caption: "메인 화면" },
         { src: "/images/youtube/search.webp", caption: "검색 결과 페이지" },
         { src: "/images/youtube/playlist.webp", caption: "플레이리스트 목록" },
