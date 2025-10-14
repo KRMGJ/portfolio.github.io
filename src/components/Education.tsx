@@ -6,9 +6,7 @@ import { education, certificates } from "@/data/portfolioData";
 export default function Education() {
     return (
         <Section title="">
-            {/* 2칼럼: 작은 화면에서는 세로, md부터 가로 */}
             <div className="grid md:grid-cols-2 gap-8">
-                {/* 학력 */}
                 <div>
                     <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">학력</h2>
                     <div className="grid gap-4">
@@ -26,7 +24,6 @@ export default function Education() {
                     </div>
                 </div>
 
-                {/* 자격증 */}
                 <div>
                     <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">자격증</h2>
                     <div className="grid gap-4">

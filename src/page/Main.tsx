@@ -16,7 +16,9 @@ export default function Main() {
             <Skills />
             <Line />
             <Projects />
+            <Line />
             <Experiences />
+            <Line />
             <HowIWork />
             <Line />
             <Contact />
