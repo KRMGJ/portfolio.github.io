@@ -5,6 +5,7 @@ import { BlogPage } from "./docs/BlogPage";
 import { StorePage } from "./docs/StorePage";
 import { WhereToGoPage } from "./docs/WtgPage";
 import { YouTubePage } from "./docs/YoutubePage";
+import { FundingPage } from "./docs/FundingPage";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/store" element={<StorePage />} />
         <Route path="/wtg" element={<WhereToGoPage />} />
         <Route path="/youtube" element={<YouTubePage />} />
+        <Route path="/funding" element={<FundingPage />} />
       </Routes>
     </div>
   );

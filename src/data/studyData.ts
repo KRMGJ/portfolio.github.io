@@ -196,3 +196,26 @@ export const youtubeCaseStudyData: CaseStudyData = {
         { label: "GitHub", href: "https://github.com/KRMGJ/Music" }
     ]
 };
+
+export const fundingCaseStudyData: CaseStudyData = {
+    title: "3차 팀 프로젝트 — Crowd Funding Platform",
+    subtitle: "오라클 DB와 MyBatis를 활용한 크라우드 펀딩 플랫폼",
+    summary:
+        "오라클 DB와 MyBatis를 활용한 크라우드 펀딩 플랫폼 구현. 임시 구현 완료.",
+    role: "Project Manager & Full-stack Developer",
+    period: "2025-09-01 ~ ",
+    members: "4명",
+    tags: ["React", "TypeScript", "Spring Boot", "Oracle", "MyBatis", "REST API", "Team"],
+    features: [],
+    architecture: {
+        environment: "Windows 10",
+        stack: "React, TypeScript, Spring Boot, Oracle, MyBatis",
+        api: "REST API"
+    },
+    outcomes: [],
+    screenshots: [],
+    links: [
+        { label: "GitHub Front", href: "https://github.com/KRMGJ/Funding-F" },
+        { label: "GitHub Back", href: "https://github.com/KRMGJ/Funding-B" },
+    ]
+};
