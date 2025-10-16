@@ -24,19 +24,9 @@ export interface CaseStudyData {
     links?: CaseStudyLink[];
 }
 
-const DEFAULT_TOC = [
-    { id: "summary", label: "요약" },
-    { id: "features", label: "핵심 기능" },
-    { id: "outcomes", label: "성과" },
-    { id: "screenshots", label: "스크린샷" },
-    { id: "links", label: "참고 링크" },
-] as const;
-
-type TocItem = typeof DEFAULT_TOC[number];
-
-export function ProjectCaseStudy({ data, toc = DEFAULT_TOC.slice() }: { data: CaseStudyData; toc?: TocItem[] }) {
+export function ProjectCaseStudy({ data }: { data: CaseStudyData }) {
     return (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
             {/* Header */}
             <header className="space-y-3 mb-8">
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{data.title}</h1>
@@ -48,113 +38,94 @@ export function ProjectCaseStudy({ data, toc = DEFAULT_TOC.slice() }: { data: Ca
                 </div>
             </header>
 
-            {/* Layout: Left TOC / Right Content */}
-            <div className="grid grid-cols-12 gap-8">
-                <aside className="col-span-12 lg:col-span-3">
-                    <nav className="lg:sticky lg:top-24 bg-muted/20 rounded-xl p-4 border border-muted/40">
-                        <div className="text-xs font-medium text-muted-foreground mb-2">목차</div>
-                        <ul className="space-y-1 text-sm">
-                            {toc.map((t) => (
-                                <li key={t.id}>
-                                    <a href={`#${t.id}`} className="block rounded-md px-2 py-1 hover:bg-muted/50">
-                                        {t.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </aside>
-
-                <main className="col-span-12 lg:col-span-9 space-y-10">
-                    {/* Summary */}
-                    <section id="summary" className="scroll-mt-24" style={{ marginBottom: '2.5rem' }}>
-                        <Card className="border-muted/50">
-                            <CardContent className="p-6 space-y-4">
-                                <div className="text-xl font-semibold">요약</div>
-                                <p className="text-sm text-muted-foreground leading-relaxed">{data.summary}</p>
-                                <div className="grid sm:grid-cols-3 gap-4">
-                                    <KV k="역할" v={data.role} />
-                                    <KV k="기간" v={data.period} />
-                                    {data.members ? <KV k="인원" v={data.members} /> : null}
-                                </div>
-                                {data.links && data.links.length > 0 ? (
-                                    <div className="flex gap-2 flex-wrap">
-                                        {data.links.map((l) => (
-                                            <Button key={l.href} asChild size="sm" variant="outline">
-                                                <a href={l.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1">
-                                                    {l.label} <ExternalLink className="h-3.5 w-3.5" />
-                                                </a>
-                                            </Button>
-                                        ))}
-                                    </div>
-                                ) : null}
-                            </CardContent>
-                        </Card>
-                    </section>
-
-                    {/* Features */}
-                    <Section id="features" title="핵심 기능">
-                        {data.features.map((f) => (
-                            <Feature key={f.title} title={f.title} items={f.items} />
-                        ))}
-                    </Section>
-
-                    {/* Architecture */}
-                    {data.architecture ? (
-                        <Section id="architecture" title="설계 · 프로세스">
-                            <Card className="border-muted/50" style={{ marginTop: '1rem' }}>
-                                <CardContent className="p-5 space-y-3 text-sm text-muted-foreground">
-                                    <Item label="환경">{data.architecture.environment}</Item>
-                                    <Item label="스택">{data.architecture.stack}</Item>
-                                    <Item label="API">{data.architecture.api}</Item>
-                                </CardContent>
-                            </Card>
-                        </Section>
-                    ) : null}
-
-                    {/* Outcomes */}
-                    {data.outcomes && data.outcomes.length > 0 ? (
-                        <Section id="outcomes" title="성과">
-                            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                                {data.outcomes.map((o, i) => (
-                                    <li key={i}>{o}</li>
-                                ))}
-                            </ul>
-                        </Section>
-                    ) : null}
-
-                    {/* Screenshots */}
-                    {data.screenshots && data.screenshots.length > 0 ? (
-                        <Section id="screenshots" title="스크린샷">
-                            <div className="grid gap-4">
-                                {data.screenshots.map((s, i) => (
-                                    <ImageFigure key={i} src={s.src} caption={s.caption} />
-                                ))}
-                            </div>
-                        </Section>
-                    ) : null}
-
-                    {/* Links (again, optional footer area) */}
-                    {data.links && data.links.length > 0 ? (
-                        <Section id="links" title="참고 링크">
-                            <div className="flex flex-wrap gap-2">
+            {/* Summary */}
+            <section id="summary" className="scroll-mt-24" style={{ marginBottom: '2.5rem' }}>
+                <Card className="border-muted/50">
+                    <CardContent className="p-6 space-y-4">
+                        <div className="text-xl font-semibold">요약</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{data.summary}</p>
+                        <div className="grid sm:grid-cols-3 gap-4">
+                            <KV k="역할" v={data.role} />
+                            <KV k="기간" v={data.period} />
+                            {data.members ? <KV k="인원" v={data.members} /> : null}
+                        </div>
+                        {data.links && data.links.length > 0 ? (
+                            <div className="flex gap-2 flex-wrap">
                                 {data.links.map((l) => (
-                                    <Button key={l.href} asChild size="sm" variant="secondary">
+                                    <Button key={l.href} asChild size="sm" variant="outline">
                                         <a href={l.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1">
                                             {l.label} <ExternalLink className="h-3.5 w-3.5" />
                                         </a>
                                     </Button>
                                 ))}
                             </div>
-                        </Section>
-                    ) : null}
-                </main>
-            </div>
+                        ) : null}
+                    </CardContent>
+                </Card>
+            </section>
+
+            {/* Features */}
+            <Section id="features" title="핵심 기능">
+                <div className="grid md:grid-cols-2 gap-4">
+                    {data.features.map((f) => (
+                        <Feature key={f.title} title={f.title} items={f.items} />
+                    ))}
+                </div>
+            </Section>
+
+            {/* Architecture */}
+            {data.architecture ? (
+                <Section id="architecture" title="설계 · 프로세스">
+                    <Card className="border-muted/50" style={{ marginTop: '1rem' }}>
+                        <CardContent className="p-5 space-y-3 text-sm text-muted-foreground">
+                            <Item label="환경">{data.architecture.environment}</Item>
+                            <Item label="스택">{data.architecture.stack}</Item>
+                            <Item label="API">{data.architecture.api}</Item>
+                        </CardContent>
+                    </Card>
+                </Section>
+            ) : null}
+
+            {/* Outcomes */}
+            {data.outcomes && data.outcomes.length > 0 ? (
+                <Section id="outcomes" title="성과">
+                    <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                        {data.outcomes.map((o, i) => (
+                            <li key={i}>{o}</li>
+                        ))}
+                    </ul>
+                </Section>
+            ) : null}
+
+            {/* Screenshots */}
+            {data.screenshots && data.screenshots.length > 0 ? (
+                <Section id="screenshots" title="스크린샷">
+                    <div className="grid gap-4">
+                        {data.screenshots.map((s, i) => (
+                            <ImageFigure key={i} src={s.src} caption={s.caption} />
+                        ))}
+                    </div>
+                </Section>
+            ) : null}
+
+            {/* Links */}
+            {data.links && data.links.length > 0 ? (
+                <Section id="links" title="참고 링크">
+                    <div className="flex flex-wrap gap-2">
+                        {data.links.map((l) => (
+                            <Button key={l.href} asChild size="sm" variant="secondary">
+                                <a href={l.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1">
+                                    {l.label} <ExternalLink className="h-3.5 w-3.5" />
+                                </a>
+                            </Button>
+                        ))}
+                    </div>
+                </Section>
+            ) : null}
         </div>
     );
 }
 
-/* ----------------------------- helpers ----------------------------- */
 function KV({ k, v }: { k: string; v: string }) {
     return (
         <div className="rounded-lg border border-muted/50 p-4">
@@ -175,7 +146,7 @@ function Section({ id, title, children }: { id: string; title: string; children:
 
 function Feature({ title, items }: { title: string; items: string[] }) {
     return (
-        <Card className="border-muted/50" style={{ marginTop: '1rem' }}>
+        <Card className="border-muted/50 h-full">
             <CardContent className="p-5 space-y-2">
                 <div className="font-medium">{title}</div>
                 <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
@@ -198,10 +169,108 @@ function Item({ label, children }: { label: string; children: React.ReactNode })
 }
 
 function ImageFigure({ src, caption }: { src: string; caption?: string }) {
+    const [open, setOpen] = React.useState(false);
+
+    // minimal zoom/pan: wheel to zoom at cursor, drag to pan, dblclick to reset
+    const [scale, setScale] = React.useState(1);
+    const [tx, setTx] = React.useState(0);
+    const [ty, setTy] = React.useState(0);
+    const wrapRef = React.useRef<HTMLDivElement | null>(null);
+
+    React.useEffect(() => {
+        if (!open) return;
+        const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [open]);
+
+    const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
+
+    const zoomAt = (factor: number, cx: number, cy: number) => {
+        const wrap = wrapRef.current; if (!wrap) return;
+        const rect = wrap.getBoundingClientRect();
+        // convert cursor to wrapper-centered coords
+        const ox = cx - (rect.left + rect.width / 2);
+        const oy = cy - (rect.top + rect.height / 2);
+        const next = clamp(scale * factor, 0.25, 6);
+        if (next === scale) return;
+        const k = next / scale;
+        // keep the cursor point under the cursor while zooming
+        setTx(tx + ox - ox * k);
+        setTy(ty + oy - oy * k);
+        setScale(next);
+    };
+
+    const onWheel: React.WheelEventHandler<HTMLDivElement> = (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.1 : 0.9;
+        zoomAt(factor, e.clientX, e.clientY);
+    };
+
+    // panning
+    const dragging = React.useRef(false);
+    const last = React.useRef({ x: 0, y: 0 });
+    const onMouseDown: React.MouseEventHandler<HTMLDivElement> = (e) => {
+        dragging.current = true;
+        last.current = { x: e.clientX, y: e.clientY };
+        e.currentTarget.style.cursor = 'grabbing';
+    };
+    const onMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
+        if (!dragging.current) return;
+        const dx = e.clientX - last.current.x;
+        const dy = e.clientY - last.current.y;
+        last.current = { x: e.clientX, y: e.clientY };
+        setTx((p) => p + dx);
+        setTy((p) => p + dy);
+    };
+    const endDrag: React.MouseEventHandler<HTMLDivElement> = (e) => {
+        dragging.current = false;
+        e.currentTarget.style.cursor = 'grab';
+    };
+
+    const onDblClick: React.MouseEventHandler<HTMLDivElement> = () => {
+        setScale(1); setTx(0); setTy(0);
+    };
+
     return (
-        <figure className="space-y-2">
-            <img src={src} alt={caption || "screenshot"} className="w-full rounded-lg border border-muted/50" />
-            {caption ? <figcaption className="text-xs text-muted-foreground">{caption}</figcaption> : null}
-        </figure>
+        <>
+            <figure className="relative group">
+                <img
+                    src={src}
+                    alt={caption || "screenshot"}
+                    className="w-full rounded-lg border border-muted/50 cursor-zoom-in"
+                    onClick={() => { setOpen(true); setScale(1); setTx(0); setTy(0); }}
+                />
+                {caption ? (
+                    <figcaption className="absolute left-2 top-2 text-xs font-semibold bg-background/80 backdrop-blur-sm px-2 py-1 rounded shadow">
+                        {caption}
+                    </figcaption>
+                ) : null}
+            </figure>
+
+            {open && (
+                <div className="fixed inset-0 z-50 bg-black/80 p-4" role="dialog" aria-modal="true">
+                    <div
+                        ref={wrapRef}
+                        className="w-full h-full cursor-grab overflow-hidden"
+                        onWheel={onWheel}
+                        onMouseDown={onMouseDown}
+                        onMouseMove={onMouseMove}
+                        onMouseUp={endDrag}
+                        onMouseLeave={endDrag}
+                        onDoubleClick={onDblClick}
+                        onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
+                    >
+                        <img
+                            src={src}
+                            alt={caption || "screenshot enlarged"}
+                            draggable={false}
+                            className="select-none pointer-events-none block mx-auto"
+                            style={{ transform: `translate(${tx}px, ${ty}px) scale(${scale})`, transformOrigin: 'center center' }}
+                        />
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
