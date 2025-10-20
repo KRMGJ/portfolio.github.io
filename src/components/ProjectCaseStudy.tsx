@@ -42,12 +42,15 @@ export function ProjectCaseStudy({ data }: { data: CaseStudyData }) {
             <section id="summary" className="scroll-mt-24" style={{ marginBottom: '2.5rem' }}>
                 <Card className="border-muted/50">
                     <CardContent className="p-6 space-y-4">
-                        <div className="text-xl font-semibold">요약</div>
+                        <div className="text-xl font-bold">요약</div>
                         <p className="text-sm text-muted-foreground leading-relaxed">{data.summary}</p>
-                        <div className="grid sm:grid-cols-3 gap-4">
+                        <div className="flex justify-between gap-4 flex-wrap">
                             <KV k="역할" v={data.role} />
                             <KV k="기간" v={data.period} />
                             {data.members ? <KV k="인원" v={data.members} /> : null}
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
                         {data.links && data.links.length > 0 ? (
                             <div className="flex gap-2 flex-wrap">
@@ -100,11 +103,7 @@ export function ProjectCaseStudy({ data }: { data: CaseStudyData }) {
             {/* Screenshots */}
             {data.screenshots && data.screenshots.length > 0 ? (
                 <Section id="screenshots" title="스크린샷">
-                    <div className="grid gap-4">
-                        {data.screenshots.map((s, i) => (
-                            <ImageFigure key={i} src={s.src} caption={s.caption} />
-                        ))}
-                    </div>
+                    <HorizontalGallery screenshots={data.screenshots!} />
                 </Section>
             ) : null}
 
@@ -128,9 +127,9 @@ export function ProjectCaseStudy({ data }: { data: CaseStudyData }) {
 
 function KV({ k, v }: { k: string; v: string }) {
     return (
-        <div className="rounded-lg border border-muted/50 p-4">
-            <div className="text-xs text-muted-foreground">{k}</div>
-            <div className="font-medium">{v}</div>
+        <div className="flex rounded-lg border border-muted/50 py-3">
+            <div className="text-xl font-semibold">{k} :</div>
+            <div className="font-medium">&nbsp;{v}</div>
         </div>
     );
 }
@@ -168,7 +167,11 @@ function Item({ label, children }: { label: string; children: React.ReactNode })
     );
 }
 
-function ImageFigure({ src, caption }: { src: string; caption?: string }) {
+function ImageFigure({
+    src,
+    caption,
+    thumbClass,
+}: { src: string; caption?: string; thumbClass?: string }) {
     const [open, setOpen] = React.useState(false);
 
     // minimal zoom/pan: wheel to zoom at cursor, drag to pan, dblclick to reset
@@ -179,9 +182,9 @@ function ImageFigure({ src, caption }: { src: string; caption?: string }) {
 
     React.useEffect(() => {
         if (!open) return;
-        const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
-        window.addEventListener('keydown', onKey);
-        return () => window.removeEventListener('keydown', onKey);
+        const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
     }, [open]);
 
     const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -189,13 +192,13 @@ function ImageFigure({ src, caption }: { src: string; caption?: string }) {
     const zoomAt = (factor: number, cx: number, cy: number) => {
         const wrap = wrapRef.current; if (!wrap) return;
         const rect = wrap.getBoundingClientRect();
-        // convert cursor to wrapper-centered coords
+        // cursor -> wrapper center 좌표
         const ox = cx - (rect.left + rect.width / 2);
         const oy = cy - (rect.top + rect.height / 2);
         const next = clamp(scale * factor, 0.25, 6);
         if (next === scale) return;
         const k = next / scale;
-        // keep the cursor point under the cursor while zooming
+        // 커서 아래 지점이 그대로 유지되도록 보정
         setTx(tx + ox - ox * k);
         setTy(ty + oy - oy * k);
         setScale(next);
@@ -213,7 +216,7 @@ function ImageFigure({ src, caption }: { src: string; caption?: string }) {
     const onMouseDown: React.MouseEventHandler<HTMLDivElement> = (e) => {
         dragging.current = true;
         last.current = { x: e.clientX, y: e.clientY };
-        e.currentTarget.style.cursor = 'grabbing';
+        e.currentTarget.style.cursor = "grabbing";
     };
     const onMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
         if (!dragging.current) return;
@@ -225,7 +228,7 @@ function ImageFigure({ src, caption }: { src: string; caption?: string }) {
     };
     const endDrag: React.MouseEventHandler<HTMLDivElement> = (e) => {
         dragging.current = false;
-        e.currentTarget.style.cursor = 'grab';
+        e.currentTarget.style.cursor = "grab";
     };
 
     const onDblClick: React.MouseEventHandler<HTMLDivElement> = () => {
@@ -238,7 +241,10 @@ function ImageFigure({ src, caption }: { src: string; caption?: string }) {
                 <img
                     src={src}
                     alt={caption || "screenshot"}
-                    className="w-full rounded-lg border border-muted/50 cursor-zoom-in"
+                    className={[
+                        "rounded-lg border border-muted/50 cursor-zoom-in",
+                        thumbClass ?? "w-full",
+                    ].join(" ")}
                     onClick={() => { setOpen(true); setScale(1); setTx(0); setTy(0); }}
                 />
                 {caption ? (
@@ -266,11 +272,76 @@ function ImageFigure({ src, caption }: { src: string; caption?: string }) {
                             alt={caption || "screenshot enlarged"}
                             draggable={false}
                             className="select-none pointer-events-none block mx-auto"
-                            style={{ transform: `translate(${tx}px, ${ty}px) scale(${scale})`, transformOrigin: 'center center' }}
+                            style={{ transform: `translate(${tx}px, ${ty}px) scale(${scale})`, transformOrigin: "center center" }}
                         />
                     </div>
                 </div>
             )}
         </>
+    );
+}
+
+function HorizontalGallery({ screenshots }: { screenshots: { src: string; caption?: string }[] }) {
+    const listRef = React.useRef<HTMLDivElement | null>(null);
+    const itemRefs = React.useRef<Array<HTMLDivElement | null>>([]);
+    const [index, setIndex] = React.useState(0);
+
+    const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
+    const scrollTo = (i: number) => {
+        const el = itemRefs.current[i];
+        if (el) el.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    };
+
+    const next = () => { const i = clamp(index + 1, 0, screenshots.length - 1); setIndex(i); scrollTo(i); };
+    const prev = () => { const i = clamp(index - 1, 0, screenshots.length - 1); setIndex(i); scrollTo(i); };
+
+    // 사용자가 드래그/휠로 스크롤했을 때도 가장 가까운 카드로 인덱스 동기화
+    const onScroll = () => {
+        const list = listRef.current; if (!list) return;
+        const children = itemRefs.current.filter(Boolean) as HTMLDivElement[];
+        let best = 0; let bestDist = Infinity; const sl = list.scrollLeft;
+        children.forEach((c, i) => {
+            const dist = Math.abs(c.offsetLeft - sl);
+            if (dist < bestDist) { bestDist = dist; best = i; }
+        });
+        setIndex(best);
+    };
+
+    return (
+        <div className="relative">
+            {/* 좌/우 이동 버튼 */}
+            <div className="absolute -top-10 right-0 flex gap-2">
+                <Button size="icon" variant="outline" onClick={prev} aria-label="이전">◀</Button>
+                <Button size="icon" variant="outline" onClick={next} aria-label="다음">▶</Button>
+            </div>
+
+            <div
+                ref={listRef}
+                onScroll={onScroll}
+                className="flex gap-4 overflow-x-auto py-2 snap-x snap-mandatory [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+            >
+                {screenshots.map((s, i) => (
+                    <div
+                        key={i}
+                        ref={(el) => { itemRefs.current[i] = el; }}
+                        className="snap-start shrink-0 basis-[360px]"   // ★ 한 장 폭 고정
+                        style={{ scrollMarginInline: "12px" }}
+                    >
+                        {/* 작은 썸네일: 균일한 높이 */}
+                        <ImageFigure src={s.src} caption={s.caption} thumbClass="w-full h-56 object-cover" />
+                    </div>
+                ))}
+            </div>
+
+            {/* 인디케이터 */}
+            <div className="mt-2 flex justify-center gap-1">
+                {screenshots.map((_, i) => (
+                    <span
+                        key={i}
+                        className={["h-1.5 w-1.5 rounded-full", i === index ? "bg-foreground" : "bg-muted-foreground/30"].join(" ")}
+                    />
+                ))}
+            </div>
+        </div>
     );
 }
