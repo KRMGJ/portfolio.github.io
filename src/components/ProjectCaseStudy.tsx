@@ -238,6 +238,11 @@ function ImageFigure({
     return (
         <>
             <figure className="relative group">
+                {caption ? (
+                    <figcaption className="left-2 top-2 text-sm font-semibold bg-background/80 backdrop-blur-sm px-2 py-1 rounded shadow">
+                        {caption}
+                    </figcaption>
+                ) : null}
                 <img
                     src={src}
                     alt={caption || "screenshot"}
@@ -247,32 +252,33 @@ function ImageFigure({
                     ].join(" ")}
                     onClick={() => { setOpen(true); setScale(1); setTx(0); setTy(0); }}
                 />
-                {caption ? (
-                    <figcaption className="absolute left-2 top-2 text-xs font-semibold bg-background/80 backdrop-blur-sm px-2 py-1 rounded shadow">
-                        {caption}
-                    </figcaption>
-                ) : null}
+
             </figure>
 
             {open && (
                 <div className="fixed inset-0 z-50 bg-black/80 p-4" role="dialog" aria-modal="true">
                     <div
                         ref={wrapRef}
-                        className="w-full h-full cursor-grab overflow-hidden"
+                        className="w-full h-full cursor-grab overflow-hidden flex items-center justify-center"
                         onWheel={onWheel}
                         onMouseDown={onMouseDown}
                         onMouseMove={onMouseMove}
                         onMouseUp={endDrag}
                         onMouseLeave={endDrag}
                         onDoubleClick={onDblClick}
-                        onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
+                        // onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
                     >
                         <img
                             src={src}
                             alt={caption || "screenshot enlarged"}
                             draggable={false}
-                            className="select-none pointer-events-none block mx-auto"
-                            style={{ transform: `translate(${tx}px, ${ty}px) scale(${scale})`, transformOrigin: "center center" }}
+                            className="select-none pointer-events-none object-contain"
+                            style={{
+                                maxHeight: "100vh",
+                                maxWidth: "100%",
+                                transform: `translate(${tx}px, ${ty}px) scale(${scale})`,
+                                transformOrigin: "center center",
+                            }}
                         />
                     </div>
                 </div>
@@ -282,66 +288,21 @@ function ImageFigure({
 }
 
 function HorizontalGallery({ screenshots }: { screenshots: { src: string; caption?: string }[] }) {
-    const listRef = React.useRef<HTMLDivElement | null>(null);
-    const itemRefs = React.useRef<Array<HTMLDivElement | null>>([]);
-    const [index, setIndex] = React.useState(0);
-
-    const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
-    const scrollTo = (i: number) => {
-        const el = itemRefs.current[i];
-        if (el) el.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
-    };
-
-    const next = () => { const i = clamp(index + 1, 0, screenshots.length - 1); setIndex(i); scrollTo(i); };
-    const prev = () => { const i = clamp(index - 1, 0, screenshots.length - 1); setIndex(i); scrollTo(i); };
-
-    // 사용자가 드래그/휠로 스크롤했을 때도 가장 가까운 카드로 인덱스 동기화
-    const onScroll = () => {
-        const list = listRef.current; if (!list) return;
-        const children = itemRefs.current.filter(Boolean) as HTMLDivElement[];
-        let best = 0; let bestDist = Infinity; const sl = list.scrollLeft;
-        children.forEach((c, i) => {
-            const dist = Math.abs(c.offsetLeft - sl);
-            if (dist < bestDist) { bestDist = dist; best = i; }
-        });
-        setIndex(best);
-    };
-
     return (
-        <div className="relative">
-            {/* 좌/우 이동 버튼 */}
-            <div className="absolute -top-10 right-0 flex gap-2">
-                <Button size="icon" variant="outline" onClick={prev} aria-label="이전">◀</Button>
-                <Button size="icon" variant="outline" onClick={next} aria-label="다음">▶</Button>
-            </div>
-
-            <div
-                ref={listRef}
-                onScroll={onScroll}
-                className="flex gap-4 overflow-x-auto py-2 snap-x snap-mandatory [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
-            >
-                {screenshots.map((s, i) => (
-                    <div
-                        key={i}
-                        ref={(el) => { itemRefs.current[i] = el; }}
-                        className="snap-start shrink-0 basis-[360px]"   // ★ 한 장 폭 고정
-                        style={{ scrollMarginInline: "12px" }}
-                    >
-                        {/* 작은 썸네일: 균일한 높이 */}
-                        <ImageFigure src={s.src} caption={s.caption} thumbClass="w-full h-56 object-cover" />
-                    </div>
-                ))}
-            </div>
-
-            {/* 인디케이터 */}
-            <div className="mt-2 flex justify-center gap-1">
-                {screenshots.map((_, i) => (
-                    <span
-                        key={i}
-                        className={["h-1.5 w-1.5 rounded-full", i === index ? "bg-foreground" : "bg-muted-foreground/30"].join(" ")}
+        <div className="flex gap-3 overflow-x-auto py-2 snap-x snap-mandatory [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden">
+            {screenshots.map((s, i) => (
+                <div
+                    key={i}
+                    className="shrink-0 snap-start"
+                    style={{ width: "200px" }}
+                >
+                    <ImageFigure
+                        src={s.src}
+                        caption={s.caption}
+                        thumbClass="w-full h-36 object-cover rounded-md border border-muted/50"
                     />
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
     );
 }
