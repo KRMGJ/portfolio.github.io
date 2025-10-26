@@ -138,8 +138,8 @@ export const projects = [
         ],
         web: { href: null },
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/youtube" }
-            { label: "문서", href: "http://localhost:5173/youtube" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/youtube" }
+            // { label: "문서", href: "http://localhost:5173/youtube" },
         ],
     },
     {
@@ -147,8 +147,8 @@ export const projects = [
         tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "Spring Boot", "PostgreSQL", "Docker", "Redis", "OpenAI"],
         summary: "설문 생성/배포, 응답 관리, 결과 시각화",
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/form" },
-            { label: "문서", href: "http://localhost:5173/form" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/form" },
+            // { label: "문서", href: "http://localhost:5173/form" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
         contributions: [
@@ -168,8 +168,8 @@ export const projects = [
         tags: ["React", "TypeScript", "Vite", "Express", "REST", "MySQL", "Team"],
         summary: "여행 검색, 필터, 위시리스트, 지도 연동",
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/wtg" },
-            { label: "문서", href: "http://localhost:5173/wtg" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/wtg" },
+            // { label: "문서", href: "http://localhost:5173/wtg" },
         ] as ProjectLink[],
         role: "Full-stack",
         contributions: [
@@ -191,8 +191,8 @@ export const projects = [
         tags: ["React", "Java", "Spring Boot", "Spring Security", "MySQL", "Team"],
         summary: "상품, 장바구니, 결제, 관리자 기능",
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/store" },
-            { label: "문서", href: "http://localhost:5173/store" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/store" },
+            // { label: "문서", href: "http://localhost:5173/store" },
         ] as ProjectLink[],
         role: "Full-stack",
         contributions: [
@@ -214,8 +214,8 @@ export const projects = [
         tags: ["React", "Bootstrap", "Vercel", "TypeScript"],
         summary: "폼 검증, 모듈 컴포넌트, 라우팅",
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/blog" },
-            { label: "문서", href: "http://localhost:5173/blog" },
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/blog" },
+            // { label: "문서", href: "http://localhost:5173/blog" },
         ] as ProjectLink[],
         role: "Full-stack(개인)",
         contributions: [
