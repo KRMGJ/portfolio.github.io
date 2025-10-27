@@ -199,23 +199,86 @@ export const youtubeCaseStudyData: CaseStudyData = {
 
 export const fundingCaseStudyData: CaseStudyData = {
     title: "3차 팀 프로젝트 — Crowd Funding Platform",
-    subtitle: "오라클 DB와 MyBatis를 활용한 크라우드 펀딩 플랫폼",
+    subtitle: "크리에이터 등록 → 프로젝트 생성 → 후원/정산까지의 전주기 플랫폼",
     summary:
-        "오라클 DB와 MyBatis를 활용한 크라우드 펀딩 플랫폼 구현. 임시 구현 완료.",
-    role: "Project Manager & Full-stack Developer",
-    period: "2025-09-01 ~ ",
-    members: "4명",
-    tags: ["React", "TypeScript", "Spring Boot", "Oracle", "MyBatis", "REST API", "Team"],
-    features: [],
+        "Oracle 11g + MyBatis 기반의 크라우드 펀딩 서비스. 크리에이터 등록, 프로젝트 생성·승인, 후원/결제 흐름, 정산 스케줄러, 알림(SSE), 관리자 대시보드까지 핵심 도메인을 수직 통합. FE는 React + TypeScript + shadcn/ui, BE는 Spring Boot 3.x.",
+    role: "PM & Full-Stack(요건 설계, DB/백엔드/프론트 총괄)",
+    period: "2025-09-01 ~ 진행중",
+    members: "3명",
+    tags: [
+        "React", "TypeScript", "Vite", "TailwindCSS", "shadcn/ui",
+        "Spring Boot", "Java 21", "Oracle 19c", "MyBatis",
+        "REST API", "JWT", "SSE"
+    ],
+    features: [
+        {
+            title: "크리에이터/회원",
+            items: [
+                "크리에이터 등록(서류 업로드, 검수/승인)",
+                "팔로우/언팔로우, 크리에이터 페이지",
+                "프로젝트 별 후원자 수 집계, 배송 상태 관리"
+            ]
+        },
+        {
+            title: "프로젝트",
+            items: [
+                "프로젝트 생성 마법사(카테고리/목표금액/기간/썸네일)",
+                "관리자 승인 워크플로우",
+                "프로젝트 상세(진행률, 남은일, 후원자 수, 조회/좋아요)"
+            ]
+        },
+        {
+            title: "후원/결제",
+            items: [
+                "리워드 구성(옵션/재고/가격)",
+                "후원 생성(추가후원금, 배송정보)·취소",
+                "결제 플로우 모사 및 상태 전이(BE 트랜잭션 관리)"
+            ]
+        },
+        {
+            title: "정산/스케줄러",
+            items: [
+                "일일 배치: WAITING→PAID 정산 처리",
+                "지표 테이블 집계(매출/성공률/카테고리별 통계)",
+                "관리자 정산 요약 페이지"
+            ]
+        },
+        {
+            title: "알림/운영",
+            items: [
+                "SSE 알림 허브(BACKING_SUCCESS, SHIPPING_SENT 등)",
+                "관리자 공지·신고/문의 응대",
+                "로그/예외 처리, 감사 추적 필드(createdAt/updatedAt)"
+            ]
+        },
+        {
+            title: "프론트 UX",
+            items: [
+                "목록(정렬/필터)·무한스크롤",
+                "카드/차트 컴포넌트, 반응형 UI",
+                "에디터(프로젝트 소개), 토스트/로딩 스피너"
+            ]
+        }
+    ],
     architecture: {
         environment: "Windows 10",
-        stack: "React, TypeScript, Spring Boot, Oracle, MyBatis",
-        api: "REST API"
+        stack: "React, TypeScript, Vite, TailwindCSS, shadcn/ui, Spring Boot 3.x, Oracle 19c, MyBatis",
+        api: "REST API(JWT 인증), SSE 알림, Object Storage(파일 업로드)"
     },
-    outcomes: [],
-    screenshots: [],
+    outcomes: [
+        "팀 개발 프로세스 정립: 요구분석→스키마→API 스펙→FE 통합",
+        "도메인 모델·트랜잭션 경계 확립으로 ORA 오류 감소",
+        "정산/알림/통계 등 운영 관점 기능 완성도로 실서비스 수준 검증"
+    ],
+    screenshots: [
+        { src: "/images/funding/erd.webp", caption: "ERD" },
+        { src: "/images/funding/home.webp", caption: "메인" },
+        { src: "/images/funding/detail.webp", caption: "프로젝트 상세" },
+        { src: "/images/funding/creator.webp", caption: "크리에이터 페이지" },
+        { src: "/images/funding/admin.webp", caption: "관리자 대시보드/정산" }
+    ],
     links: [
         { label: "GitHub Front", href: "https://github.com/KRMGJ/Funding-F" },
-        { label: "GitHub Back", href: "https://github.com/KRMGJ/Funding-B" },
+        { label: "GitHub Back", href: "https://github.com/KRMGJ2/Funding-B" }
     ]
 };

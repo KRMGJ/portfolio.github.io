@@ -98,7 +98,7 @@ export type ProjectLink = { label: string; href: string };
 
 export const projects = [
     {
-        name: "3차 팀 프로젝트 — Crowd Funding Platform (개발중)",
+        name: "3차 팀 프로젝트 — Crowd Funding Platform",
         tags: ["React", "TypeScript", "Spring Boot", "Oracle", "MyBatis", "REST API", "Team"],
         summary:
             "오라클 DB와 MyBatis를 활용한 크라우드 펀딩 플랫폼. 사용자 인증, 프로젝트 생성, 후원, 댓글, 관리자 기능 구현.",
@@ -116,7 +116,8 @@ export const projects = [
         ],
         web: { href: null },
         links: [
-            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/funding" }
+            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/funding" }
+            { label: "문서", href: "http://localhost:5174/funding" }
         ]
     },
     {
