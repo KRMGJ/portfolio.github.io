@@ -274,11 +274,13 @@ export const fundingCaseStudyData: CaseStudyData = {
         { src: "/images/funding/erd.webp", caption: "ERD" },
         { src: "/images/funding/home.webp", caption: "메인" },
         { src: "/images/funding/detail.webp", caption: "프로젝트 상세" },
+        { src: "/images/funding/backing.webp", caption: "후원 플로우" },
         { src: "/images/funding/creator.webp", caption: "크리에이터 페이지" },
-        { src: "/images/funding/admin.webp", caption: "관리자 대시보드/정산" }
+        { src: "/images/funding/admin-dashboard.webp", caption: "관리자 대시보드" },
+        { src: "/images/funding/settlement.webp", caption: "정산 페이지" }
     ],
     links: [
         { label: "GitHub Front", href: "https://github.com/KRMGJ/Funding-F" },
-        { label: "GitHub Back", href: "https://github.com/KRMGJ2/Funding-B" }
+        { label: "GitHub Back", href: "https://github.com/KRMGJ/Funding-B" }
     ]
 };
