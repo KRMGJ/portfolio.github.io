@@ -203,7 +203,7 @@ export const fundingCaseStudyData: CaseStudyData = {
     summary:
         "Oracle 11g + MyBatis 기반의 크라우드 펀딩 서비스. 크리에이터 등록, 프로젝트 생성·승인, 후원/결제 흐름, 정산 스케줄러, 알림(SSE), 관리자 대시보드까지 핵심 도메인을 수직 통합. FE는 React + TypeScript + shadcn/ui, BE는 Spring Boot 3.x.",
     role: "PM & Full-Stack(요건 설계, DB/백엔드/프론트 총괄)",
-    period: "2025-09-01 ~ 진행중",
+    period: "2025-09-01 ~ 2025-10-25",
     members: "3명",
     tags: [
         "React", "TypeScript", "Vite", "TailwindCSS", "shadcn/ui",

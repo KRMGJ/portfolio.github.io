@@ -116,8 +116,8 @@ export const projects = [
         ],
         web: { href: null },
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/funding" }
-            { label: "문서", href: "http://localhost:5174/funding" }
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/funding" }
+            // { label: "문서", href: "http://localhost:5174/funding" }
         ]
     },
     {
