@@ -12,6 +12,8 @@ export default function Projects() {
                 {projects.map((p) => (
                     <Card key={p.name} className="group border-muted/50 hover:shadow-md transition-shadow">
                         <CardContent className="p-6 space-y-4">
+                            <p className="text-sm text-muted-foreground">{p.period}</p>
+
                             <div className="flex items-start justify-between gap-4">
                                 <div>
                                     <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">{p.name}</h3>

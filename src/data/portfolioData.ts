@@ -100,6 +100,7 @@ export const projects = [
     {
         name: "3차 팀 프로젝트 — Crowd Funding Platform",
         tags: ["React", "TypeScript", "Spring Boot", "Oracle", "MyBatis", "REST API", "Team"],
+        period: "2025-08 ~ 2025-10",
         summary:
             "오라클 DB와 MyBatis를 활용한 크라우드 펀딩 플랫폼. 사용자 인증, 프로젝트 생성, 후원, 댓글, 관리자 기능 구현.",
         role: "Project Manager & Full-stack Developer",
@@ -123,6 +124,7 @@ export const projects = [
     {
         name: "3차 개인 프로젝트 — YouTube Music",
         tags: ["Spring MVC", "JSP", "Oracle", "MyBatis", "YouTube API", "Legacy System"],
+        period: "2025-09 ~ 2025-10",
         summary:
             "YouTube API를 활용해 영상 검색과 플레이리스트 관리 기능을 구현.",
         role: "Full-Stack Developer",
@@ -146,6 +148,7 @@ export const projects = [
     {
         name: "2차 개인 프로젝트 — 설문조사 웹앱 (Form)",
         tags: ["React", "TypeScript", "Vite", "Zustand", "React Query", "Spring Boot", "PostgreSQL", "Docker", "Redis", "OpenAI"],
+        period: "2025-08 ~ 2025-09",
         summary: "설문 생성/배포, 응답 관리, 결과 시각화",
         links: [
             { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/form" },
@@ -167,6 +170,7 @@ export const projects = [
     {
         name: "2차 팀 프로젝트 — Where To Go",
         tags: ["React", "TypeScript", "Vite", "Express", "REST", "MySQL", "Team"],
+        period: "2024-07 ~ 2024-08",
         summary: "여행 검색, 필터, 위시리스트, 지도 연동",
         links: [
             { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/wtg" },
@@ -190,6 +194,7 @@ export const projects = [
     {
         name: "1차 팀 프로젝트 — Store_24",
         tags: ["React", "Java", "Spring Boot", "Spring Security", "MySQL", "Team"],
+        period: "2024-06 ~ 2024-07",
         summary: "상품, 장바구니, 결제, 관리자 기능",
         links: [
             { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/store" },
@@ -213,6 +218,7 @@ export const projects = [
     {
         name: "1차 개인 프로젝트 — 개인 블로그 웹앱",
         tags: ["React", "Bootstrap", "Vercel", "TypeScript"],
+        period: "2024-05 ~ 2024-06",
         summary: "폼 검증, 모듈 컴포넌트, 라우팅",
         links: [
             { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/blog" },
