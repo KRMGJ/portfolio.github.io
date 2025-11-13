@@ -19,7 +19,7 @@ export const profile = {
 } as const;
 
 export const education = [
-    { school: "배재대학교", major: "전자공학과", period: "2019.03 ~ 2024.02", icon: GraduationCap },
+    { school: "배재대학교", major: "전자공학과", period: "2019.03 ~ ", icon: GraduationCap },
 ] as const;
 
 export const certificates = [
