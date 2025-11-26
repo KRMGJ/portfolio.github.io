@@ -284,3 +284,90 @@ export const fundingCaseStudyData: CaseStudyData = {
         { label: "GitHub Back", href: "https://github.com/KRMGJ/Funding-B" }
     ]
 };
+
+export const attendanceCaseStudyData: CaseStudyData = {
+    title: "eGovFrame 기반 근태 관리 시스템",
+    subtitle: "출퇴근·휴가/연차·리포트를 통합한 사내 근태 관리",
+    summary:
+        "eGovFrame + Spring MVC 환경에서 근태/휴가/연차 도메인을 재설계한 프로젝트. 출퇴근 기록, 휴가/연차 신청·승인, 연차 자동지급 스케줄러, 부서별 월간 리포트·CSV 다운로드, 권한 기반 관리자 화면까지 포함한 레거시 근태 시스템 모던화 작업.",
+    role: "Full-Stack (개인)",
+    period: "2025-10-01 ~ 2025-12-31 (예정)",
+    members: "1명",
+    tags: [
+        "eGovFrame",
+        "Spring MVC",
+        "Spring Security",
+        "Spring Session JDBC",
+        "JSP",
+        "Oracle",
+        "MyBatis",
+        "JPA",
+        "Legacy Modernization"
+    ],
+    features: [
+        {
+            title: "출퇴근 관리",
+            items: [
+                "출근/퇴근 기록, 지각·조퇴·결근 판정",
+                "하루/주간/월간 근태 현황 조회",
+                "직원별 최근 근태 요약 위젯(대시보드)"
+            ]
+        },
+        {
+            title: "휴가/연차 관리",
+            items: [
+                "휴가/연차 신청·승인(관리자 워크플로우)",
+                "연차 잔여일수 조회 및 연차 사용 이력",
+                "입사일·근속연수 기반 연차 자동지급 스케줄러",
+                "연차 지급/차감 로그(leave_grant_log) 관리"
+            ]
+        },
+        {
+            title: "관리자 기능",
+            items: [
+                "직원 등록/수정/퇴사 처리 및 계정 비활성화",
+                "역할·권한 부여 및 사용 권한 관리",
+                "부서별 근태/휴가 요약 대시보드"
+            ]
+        },
+        {
+            title: "리포트 & CSV",
+            items: [
+                "부서별 월간 근태·야근·휴가 집계 리포트",
+                "월별 리포트 CSV 다운로드(한글 파일명 처리)",
+                "운영을 위한 검색/필터·페이지네이션 UI"
+            ]
+        },
+        {
+            title: "보안 & 세션",
+            items: [
+                "Spring Security 기반 로그인/인가 처리",
+                "Spring Session JDBC로 DB 세션 관리",
+                "생성/수정 시간, 작성자 추적 필드로 감사 로그 강화"
+            ]
+        }
+    ],
+    architecture: {
+        environment: "Windows 10, eGovFrame, Tomcat, Oracle",
+        stack: "eGovFrame, Spring MVC, Spring Security, Spring Session JDBC, MyBatis, JPA, JSP, JSTL, Oracle",
+        api: "내부 MVC 컨트롤러, CSV 다운로드 엔드포인트"
+    },
+    outcomes: [
+        "레거시 eGovFrame 기반 근태 시스템을 분석하고 모듈 단위로 모던화하는 경험 축적",
+        "근태/휴가/연차 비즈니스 규칙을 서비스 계층에서 모델링하여 유지보수성을 확보",
+        "Oracle·MyBatis·JPA를 병행 사용하면서 데이터 접근 계층 설계 역량 강화",
+        "운영 관점의 리포트·CSV 다운로드·권한 관리 등 실무 요구사항을 고려한 설계 경험"
+    ],
+    screenshots: [
+        { src: "/images/attendance/dashboard.webp", caption: "메인 대시보드" },
+        { src: "/images/attendance/attendance-list.webp", caption: "출퇴근 내역" },
+        { src: "/images/attendance/leave-request.webp", caption: "휴가 신청/승인" },
+        { src: "/images/attendance/monthly-report.webp", caption: "부서별 월간 리포트" },
+        { src: "/images/attendance/admin-users.webp", caption: "직원/권한 관리 (관리자)" }
+    ],
+    links: [
+        { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/attendance" },
+        { label: "GitHub", href: "https://github.com/KRMGJ/Attendance" }
+    ]
+};
+

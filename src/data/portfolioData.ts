@@ -101,43 +101,27 @@ export const projects = [
     {
         name: "eGovFrame 기반 근태 관리 시스템 (개발 중)",
         tags: [
-            "Java",
-            "eGovFrame",
-            "Spring MVC",
-            "Spring Security",
-            "Spring Session JDBC",
-            "JSP",
-            "Oracle",
-            "MyBatis",
-            "JPA",
-            "Legacy Modernization"
+            "eGovFrame", "Spring MVC", "Security",
+            "Session JDBC", "Oracle", "MyBatis", "JPA"
         ],
         period: "2025-10 ~ 2025-12 (예정)",
         summary:
-            "eGovFrame 기반의 사내 근태 관리 시스템으로, 출퇴근 기록, 휴가 신청·승인, 연차 자동지급 스케줄러, 권한 기반 관리자 기능 등을 포함한 엔터프라이즈 기능을 구성.",
+            "출퇴근 기록, 휴가/연차 관리, 자동 연차지급, 관리자 리포트를 포함한 사내 근태 시스템.",
         role: "Full-Stack Developer",
         contributions: [
-            // "Oracle 기반 근태·직원·연차 테이블 설계 및 인덱싱",
-            // "근태 관리 기능 구현(출퇴근 기록, 상태 관리, 월간 리포트)",
-            // "휴가 신청/승인 워크플로우 구현(JPA + MyBatis 혼합 구조)",
-            // "연차 자동 지급 스케줄러 및 지급 로그 기능 구현",
-            // "Spring Security + Spring Session JDBC 기반 세션/권한 시스템 구축",
-            // "관리자 페이지(직원 관리·권한 관리·연차 로그·근태 조회) 구현",
-            // "eGovFrame XML 기반 설정(context-*, security-*) 개선 및 고도화"
+            "근태/휴가 기능 개발",
+            "연차 자동지급 스케줄러",
+            "관리자 리포트/CSV 다운로드",
+            "보안·세션 구조 개선"
         ],
         outcomes: [
-            // "레거시(eGovFrame) 기반 엔터프라이즈 시스템 구조 이해 및 실무 적용",
-            // "MyBatis와 JPA 혼합 아키텍처 운영 경험 확보",
-            // "Oracle 기반 대규모 테이블의 조회 최적화 및 권한 체계 설계 경험",
-            // "근태·휴가·연차 도메인의 실무 로직 및 관리자 기능 구현 경험",
-            // "보안/세션 관리(Spring Security + JDBC Session) 구성 능력 확보"
+            "레거시 구조 개선 경험",
+            "Oracle·MyBatis 운영 경험"
         ],
         web: { href: null },
         links: [
-            {
-                label: "GitHub",
-                href: "https://github.com/KRMGJ/Attendance"
-            }
+            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/attendance" }
+            { label: "문서", href: "http://localhost:5173/attendance" }
         ]
     },
     {
@@ -161,7 +145,7 @@ export const projects = [
         web: { href: null },
         links: [
             { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/funding" }
-            // { label: "문서", href: "http://localhost:5174/funding" }
+            // { label: "문서", href: "http://localhost:5173/funding" }
         ]
     },
     {
