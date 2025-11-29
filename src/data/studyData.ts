@@ -360,8 +360,11 @@ export const attendanceCaseStudyData: CaseStudyData = {
     ],
     screenshots: [
         { src: "/images/attendance/dashboard.webp", caption: "메인 대시보드" },
-        { src: "/images/attendance/attendance-list.webp", caption: "출퇴근 내역" },
-        { src: "/images/attendance/leave-request.webp", caption: "휴가 신청/승인" },
+        { src: "/images/attendance/employee-list.webp", caption: "직원 목록" },
+        { src: "/images/attendance/employee-join.webp", caption: "직원 등록" },
+        { src: "/images/attendance/attendance-my.webp", caption: "나의 출퇴근 현황" },
+        { src: "/images/attendance/attendance-list.webp", caption: "출퇴근 내역 (관리자)" },
+        { src: "/images/attendance/leave-request.webp", caption: "휴가 신청/승인 (관리자)" },
         { src: "/images/attendance/monthly-report.webp", caption: "부서별 월간 리포트" },
         { src: "/images/attendance/admin-users.webp", caption: "직원/권한 관리 (관리자)" }
     ],
