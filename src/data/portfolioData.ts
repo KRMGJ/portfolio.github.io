@@ -120,8 +120,8 @@ export const projects = [
         ],
         web: { href: null },
         links: [
-            // { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/attendance" }
-            { label: "문서", href: "http://localhost:5173/attendance" }
+            { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/attendance" }
+            // { label: "문서", href: "http://localhost:5173/attendance" }
         ]
     },
     {

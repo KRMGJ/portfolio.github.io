@@ -369,7 +369,6 @@ export const attendanceCaseStudyData: CaseStudyData = {
         { src: "/images/attendance/admin-users.webp", caption: "직원/권한 관리 (관리자)" }
     ],
     links: [
-        { label: "문서", href: "https://portfolio-nu-rosy-28.vercel.app/attendance" },
         { label: "GitHub", href: "https://github.com/KRMGJ/Attendance" }
     ]
 };
