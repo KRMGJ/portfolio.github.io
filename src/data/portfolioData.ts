@@ -99,12 +99,12 @@ export type ProjectLink = { label: string; href: string };
 
 export const projects = [
     {
-        name: "eGovFrame 기반 근태 관리 시스템 (개발 중)",
+        name: "eGovFrame 기반 근태 관리 시스템",
         tags: [
             "eGovFrame", "Spring MVC", "Security",
             "Session JDBC", "Oracle", "MyBatis", "JPA"
         ],
-        period: "2025-10 ~ 2025-12 (예정)",
+        period: "2025-10 ~ 2025-12",
         summary:
             "출퇴근 기록, 휴가/연차 관리, 자동 연차지급, 관리자 리포트를 포함한 사내 근태 시스템.",
         role: "Full-Stack Developer",
