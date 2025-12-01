@@ -291,7 +291,7 @@ export const attendanceCaseStudyData: CaseStudyData = {
     summary:
         "eGovFrame + Spring MVC 환경에서 근태/휴가/연차 도메인을 재설계한 프로젝트. 출퇴근 기록, 휴가/연차 신청·승인, 연차 자동지급 스케줄러, 부서별 월간 리포트·CSV 다운로드, 권한 기반 관리자 화면까지 포함한 레거시 근태 시스템 모던화 작업.",
     role: "Full-Stack (개인)",
-    period: "2025-10-01 ~ 2025-12-31 (예정)",
+    period: "2025-10-01 ~ 2025-12-01",
     members: "1명",
     tags: [
         "eGovFrame",
@@ -359,6 +359,7 @@ export const attendanceCaseStudyData: CaseStudyData = {
         "운영 관점의 리포트·CSV 다운로드·권한 관리 등 실무 요구사항을 고려한 설계 경험"
     ],
     screenshots: [
+        { src: "/images/attendance/erd.webp", caption: "ERD" },
         { src: "/images/attendance/dashboard.webp", caption: "메인 대시보드" },
         { src: "/images/attendance/employee-list.webp", caption: "직원 목록" },
         { src: "/images/attendance/employee-join.webp", caption: "직원 등록" },
