@@ -15,7 +15,6 @@ export default function Contact() {
                             <div className="text-lg font-semibold">연락처</div>
                             <div className="flex flex-col gap-2 text-sm">
                                 <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:underline"><Mail className="h-4 w-4" /> {profile.email}</a>
-                                <a href={`mailto:dur369667@naver.com`} className="inline-flex items-center gap-2 hover:underline"><Mail className="h-4 w-4" /> dur369667@naver.com</a>
                                 <a href={`tel:${profile.phone}`} className="inline-flex items-center gap-2 hover:underline"><Phone className="h-4 w-4" /> {profile.phone}</a>
                                 <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> {profile.location}</span>
                             </div>
